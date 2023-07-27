@@ -4,7 +4,7 @@ import { NavbarComponent } from '@core/navbar/navbar.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styles: [':host {width: 100%;}']
 })
 export class AppComponent {
   title = 'portfolio';
