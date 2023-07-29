@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { NavbarComponent } from '@core/navbar/navbar.component';
+import { Component,} from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [':host {width: 100%;}']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'portfolio';
+  
+  
 }
