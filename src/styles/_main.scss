@@ -1,0 +1,46 @@
+// Required
+@use 'fonts';
+
+$white: #fff;
+$marine-blue: #0A192F;
+$block-default: #272E56;
+$font-color-default: $white;
+
+$primary:       #00E5D8 !default;
+$secondary: #FF6285 !default;
+$info:          #04AFE5 !default;
+$dark:          #0A192F !default;
+
+//dark-mode overrides
+$body-color-dark:                   $white !default;
+$body-bg-dark:                      $marine-blue !default;
+$body-tertiary-bg-dark:             mix($block-default, $marine-blue, 50%) !default;
+
+//required
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+
+[data-bs-theme="dark"] {
+  $primary: #00E5D8;
+  --bs-primary: #00E5D8;
+  --bs-primary-bg-subtle: #00E5D8;
+  --bs-primary-bg-subtle-dark: #00E5D8;
+
+  .btn-primary {
+    --bs-btn-bg: #00E5D8;
+  }
+
+  .navbar-toggler-icon{
+    background-image: url('../assets/img/three_line.png')!important;
+    background-size: contain;
+    padding: 10px;
+  }
+}
+
+:root{
+  --bs-body-font-family: 'Poppins', sans-serif !important;
+}
+.navbar-toggler{
+  border: none;
+}
+

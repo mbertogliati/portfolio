@@ -1,0 +1,60 @@
+@import 'main';
+#home-container{
+    align-items: center;
+    height: fit-content;
+    display: flex;
+    .row{
+      width: 100%;
+      max-width: 80rem;
+      justify-content: center;
+    }
+    .col-6{
+      width: fit-content;
+    }
+}
+#home-introduction{
+  width: fit-content;
+  span{
+    font-family: 'Courier Prime', Courier, monospace;
+    color: $primary;
+    font-size: larger;
+    font-weight: 500;
+    width: fit-content;
+  }
+}
+#me img{
+  width: 100%;
+  max-width: 350px;
+  min-width: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  clip-path: circle(50% at center);
+}
+#home-footer {
+  a:hover {
+    transform: scale(1.05);
+    transition: ease-out;
+    transition-duration: 0.2s;
+  }
+  a{
+    transition: ease-out;
+    transition-duration: 0.2s;
+  }
+}
+#home-cv{
+  text-decoration: none;
+  color: $white;
+}
+#social-media-icons{
+  gap: 0.5rem;
+  a{
+    aspect-ratio: 1;
+    height: 1.5rem;
+    transition-duration: 0.2s;
+  }
+  img{
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
