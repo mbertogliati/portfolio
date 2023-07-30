@@ -1,16 +1,16 @@
 @import 'main';
-#home-container{
-    align-items: center;
-    height: fit-content;
-    display: flex;
-    .row{
-      width: 100%;
-      max-width: 80rem;
-      justify-content: center;
-    }
-    .col-6{
-      width: fit-content;
-    }
+:host{
+  height: fit-content;
+}
+#home-page-container{
+  .row{
+    width: 100%;
+    max-width: 80rem;
+    justify-content: center;
+  }
+  .col-6{
+    width: fit-content;
+  }
 }
 #home-introduction{
   width: fit-content;

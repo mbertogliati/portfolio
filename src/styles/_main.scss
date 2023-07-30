@@ -1,6 +1,8 @@
 // Required
 @use 'fonts';
 
+
+
 $white: #fff;
 $marine-blue: #0A192F;
 $block-default: #272E56;
@@ -36,11 +38,22 @@ $body-tertiary-bg-dark:             mix($block-default, $marine-blue, 50%) !defa
     padding: 10px;
   }
 }
-
 :root{
   --bs-body-font-family: 'Poppins', sans-serif !important;
 }
 .navbar-toggler{
   border: none;
+}
+h2.page-title::before{
+  content: '> ';
+  display: inline;
+  position: relative;
+  color: $primary;
+}
+.page-container{
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  display: flex;
 }
 

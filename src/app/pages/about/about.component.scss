@@ -1,0 +1,36 @@
+@import 'main';
+#about-page-container::before{
+  content: "";
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/img/purple-tech-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: blur(90px) saturate(0.8);
+}
+#about-page-container{
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+}
+#p-about-me{
+  width: fit-content;
+  mark{
+    background-color: transparent;
+    color: $secondary;
+  }
+  a{
+    text-decoration: underline solid transparent;
+    color: inherit;
+    transition: text-decoration 0.2s ease-in;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
