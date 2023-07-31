@@ -11,6 +11,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { EducationComponent } from './pages/education/education.component';
 import { WorkComponent } from './pages/work/work.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import {NgOptimizedImage} from "@angular/common";
 
 
 @NgModule({
@@ -25,10 +26,11 @@ import { ContactComponent } from './pages/contact/contact.component';
     WorkComponent,
     ContactComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
