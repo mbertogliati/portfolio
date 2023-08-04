@@ -1,6 +1,6 @@
-<div class="container d-flex" id="skill-scroll-main-container">
+<div class="container d-flex pr-sm-0" id="skill-scroll-main-container">
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
-      <div class="container" #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
+      <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
         <div id="skill-scroll">
 
             <app-skill *ngFor="let skill of mySkills"

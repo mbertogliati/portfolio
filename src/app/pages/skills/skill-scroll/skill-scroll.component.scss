@@ -3,17 +3,23 @@ $scroll-height: 4rem;
 $scroll-gap: 4rem;
 #skill-scroll-main-container{
   align-items: center;
+  justify-content: center;
+  padding: 0;
   .scroll-button{
     height: $scroll-height;
     img{
       aspect-ratio: auto;
       height: 100%;
       width: auto;
-      padding: 1rem;
+      padding: 1rem 0 1rem 1rem;
     }
   }
   .scroll-button.prev{
     transform: scaleX(-1);
+    img{
+      padding-left: 1rem;
+      padding-right: 0;
+    }
   }
   .scroll-button.disabled{
     opacity: 0.2;
@@ -32,7 +38,11 @@ $scroll-gap: 4rem;
   overflow: auto;
   padding: 0;
   @include media-breakpoint-only(xs) {
-    width: $scroll-height;
+    $scroll-gap-sm: 1.8rem;
+    width: 3*$scroll-height + 2*$scroll-gap-sm;
+    #skill-scroll{
+      gap: $scroll-gap-sm;
+    }
   }
   @include media-breakpoint-only(sm) {
     width: 3*$scroll-height + 2*$scroll-gap;
