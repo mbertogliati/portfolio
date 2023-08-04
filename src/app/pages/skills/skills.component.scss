@@ -1,5 +1,5 @@
 @import 'main';
-$skill-cards-gap: 0.8rem;
+
 #skill-cards-container{
   max-width: 840px;
   margin:auto;
@@ -17,43 +17,35 @@ $skill-cards-gap: 0.8rem;
     justify-content: flex-start;
   }
 }
-%skill-title{
-  align-items: center;
-  display: flex;
-  gap: 0.8rem;
-  &::before{
-    display: inline-block;
-    position: relative;
-    content: '';
-    width: 2.8rem;
-    aspect-ratio: 1;
-    height: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
+
 h4.skill-title-fast-learning{
-  @extend %skill-title;
+  @extend %icon-before;
   &::before{
     background-image: url('/assets/img/brain-icon.png');
   }
 }
 h4.skill-title-teamworking{
-  @extend %skill-title;
+  @extend %icon-before;
   &::before{
     background-image: url('/assets/img/teamwork-icon.png');
   }
 }
 h4.skill-title-clean-coding{
-  @extend %skill-title;
+  @extend %icon-before;
   &::before{
     background-image: url('/assets/img/clean-coding-icon.png');
   }
 }
 h4.skill-title-problem-solving{
-  @extend %skill-title;
+  @extend %icon-before;
   &::before{
     background-image: url('/assets/img/problem-solving-icon.png');
+  }
+}
+#tech-stack-title{
+  @extend %icon-before;
+  &::before{
+    background-image: url('/assets/img/stack-icon.png');
+    width: 1.5rem;
   }
 }

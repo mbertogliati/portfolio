@@ -69,4 +69,20 @@ h2.page-title::before{
     width: 100%;
   }
 }
+%icon-before{
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  &::before{
+    display: inline-block;
+    position: relative;
+    content: '';
+    width: 2.8rem;
+    aspect-ratio: 1;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
 

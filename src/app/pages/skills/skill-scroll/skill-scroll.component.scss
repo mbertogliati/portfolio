@@ -1,0 +1,83 @@
+@import 'main';
+$scroll-height: 4rem;
+$scroll-gap: 4rem;
+#skill-scroll-main-container{
+  align-items: center;
+  .scroll-button{
+    height: $scroll-height;
+    img{
+      aspect-ratio: auto;
+      height: 100%;
+      width: auto;
+      padding: 1rem;
+    }
+  }
+  .scroll-button.prev{
+    transform: scaleX(-1);
+  }
+  .scroll-button.disabled{
+    opacity: 0.2;
+  }
+  @include media-breakpoint-only(xxl) {
+    .scroll-button{
+      display: none;
+    }
+  }
+}
+#skill-scroll-container{
+  height: fit-content;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  touch-action: manipulation;
+  overflow: auto;
+  padding: 0;
+  @include media-breakpoint-only(xs) {
+    width: $scroll-height;
+  }
+  @include media-breakpoint-only(sm) {
+    width: 3*$scroll-height + 2*$scroll-gap;
+  }
+  @include media-breakpoint-only(md) {
+    width: 4*$scroll-height + 3*$scroll-gap;
+  }
+  @include media-breakpoint-only(lg) {
+    width: 6*$scroll-height + 5*$scroll-gap;
+  }
+  @include media-breakpoint-only(xl) {
+    width: 7*$scroll-height + 6*$scroll-gap;
+  }
+  @include media-breakpoint-only(xxl) {
+    justify-content: center;
+  }
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  .skill-icon:hover, .skill-icon.selected{
+    padding: 0;
+    transition: 0.25s ease-out;
+  }
+}
+#skill-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+#skill-scroll{
+  display: flex;
+  padding: 0;
+  width: fit-content;
+  flex-wrap: nowrap;
+  height: $scroll-height;
+  gap: $scroll-gap;
+}
+.skill-icon{
+  transition: 0.25s ease-out;
+  height: 100%;
+  aspect-ratio: 1;
+  scroll-snap-align: start;
+  padding: 0.2rem;
+}
+
+.skill-icon:hover, .scroll-button:hover{
+  cursor: pointer;
+}
+
+
