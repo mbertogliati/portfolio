@@ -1,10 +1,20 @@
 @import 'main';
 $scroll-height: 4rem;
 $scroll-gap: 4rem;
+
+app-skill-scroll{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow: hidden;
+}
+
 #skill-scroll-main-container{
   align-items: center;
   justify-content: center;
   padding: 0;
+  background-color: $body-bg-dark;
+  z-index: 5;
   .scroll-button{
     height: $scroll-height;
     img{
@@ -20,6 +30,7 @@ $scroll-gap: 4rem;
       padding-left: 1rem;
       padding-right: 0;
     }
+
   }
   .scroll-button.disabled{
     opacity: 0.2;
@@ -85,9 +96,21 @@ $scroll-gap: 4rem;
   scroll-snap-align: start;
   padding: 0.2rem;
 }
-
 .skill-icon:hover, .scroll-button:hover{
   cursor: pointer;
 }
-
+.skill-icon-tooltip > div{
+  background-color: rgba(0, 0, 0, 0.24) !important;
+}
+.primary-container.skill-detail{
+  max-width: 720px;
+  transform: translateY(-800px);
+  z-index: -1000;
+  transition: 0.3s ease-in;
+}
+.primary-container.skill-detail.visible{
+  z-index: 0;
+  transform: translateY(0);
+  transition: 0.3s ease-out;
+}
 

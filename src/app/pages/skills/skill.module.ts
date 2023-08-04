@@ -3,6 +3,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { SkillComponent } from './skill/skill.component';
 import { SkillsComponent } from "./skills.component";
 import { SkillScrollComponent } from './skill-scroll/skill-scroll.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SkillScrollComponent } from './skill-scroll/skill-scroll.component';
   ],
   imports: [
     CommonModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatTooltipModule
   ],
   exports: [
     SkillsComponent

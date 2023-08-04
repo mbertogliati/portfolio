@@ -1,11 +1,11 @@
-import {Component, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
-import { LinkedList } from 'linked-list-typescript';
+import {Component, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation} from '@angular/core';
 import {Skill} from "../skill";
-import {trigger} from "@angular/animations";
+import {MatTooltipModule} from '@angular/material/tooltip';
 @Component({
   selector: 'app-skill-scroll',
   templateUrl: './skill-scroll.component.html',
   styleUrls: ['./skill-scroll.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SkillScrollComponent implements AfterViewInit{
 
@@ -13,9 +13,11 @@ export class SkillScrollComponent implements AfterViewInit{
 
   @ViewChild('skillScrollContainer') skillScrollContainer?: ElementRef<HTMLDivElement>;
 
-  selectedSkill : Skill | undefined = undefined;
-  isScrollTopLeft : boolean = false;
+  isSkillSelected : boolean = false;
+  isScrollTopLeft : boolean = true;
   isScrollTopRight : boolean = false;
+  showDelay = 100;
+  hideDelay = 100;
   mySkills : Skill[] = [
     {
       name: "Javascript",
@@ -122,6 +124,7 @@ export class SkillScrollComponent implements AfterViewInit{
         "- JSON<br>"
     },];
 
+  selectedSkill : Skill = this.mySkills[0];
   ngAfterViewInit(): void {
     this.updateScrollButtons();
   }
@@ -145,12 +148,11 @@ export class SkillScrollComponent implements AfterViewInit{
     this.updateScrollButtons();
   }
   public selectSkill(skill: Skill): void {
-    if(this.selectedSkill === skill) {
-      this.selectedSkill = undefined;
+    if(this.isSkillSelected && this.selectedSkill === skill) {
+      this.isSkillSelected = false;
       return;
     }
+    this.isSkillSelected = true;
     this.selectedSkill = skill;
   }
-
-  protected readonly undefined = undefined;
 }
