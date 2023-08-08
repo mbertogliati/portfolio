@@ -5,13 +5,15 @@ import { SkillsComponent } from "./skills.component";
 import { SkillScrollComponent } from './skill-scroll/skill-scroll.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
+import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 
 
 @NgModule({
   declarations: [
     SkillComponent,
     SkillsComponent,
-    SkillScrollComponent
+    SkillScrollComponent,
+    SkillDetailComponent
   ],
     imports: [
         CommonModule,

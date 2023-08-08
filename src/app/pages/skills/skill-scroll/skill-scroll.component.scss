@@ -117,17 +117,18 @@ app-skill-scroll{
   background-color: rgba(0, 0, 0, 0.24) !important;
 }
 .primary-container.skill-detail{
-  max-width: 720px;
   position: relative;
-  opacity: 0;
-  transition: 0.5s;
+  min-width: 100%;
 }
 .skill-detail-container{
   overflow: hidden;
   display: flex;
+  max-width: 720px;
   align-items: flex-end;
+  opacity: 0;
+  transition: 0.5s;
 }
-.skill-detail.visible{
+.skill-detail-container.visible{
   opacity: 1;
   transition: 0.5s;
 }

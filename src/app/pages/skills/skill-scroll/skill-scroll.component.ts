@@ -15,6 +15,7 @@ export class SkillScrollComponent implements AfterViewInit{
   isSkillSelected : boolean = false;
   isScrollTopLeft : boolean = true;
   isScrollTopRight : boolean = false;
+  toLeft : boolean = false;
   showDelay = 300;
   hideDelay = 100;
   mySkills : Skill[] = [
@@ -156,7 +157,7 @@ export class SkillScrollComponent implements AfterViewInit{
     this.selectedSkill = skill;
   }
   public toggleSkill(skill: Skill): void{
+    this.toLeft = this.mySkills.findIndex(s => s === skill) < this.mySkills.findIndex(s => s === this.selectedSkill);
     this.selectSkill(skill);
-
   }
 }
