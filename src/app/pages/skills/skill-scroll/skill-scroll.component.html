@@ -2,29 +2,31 @@
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
       <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
         <div id="skill-scroll">
-
-            <app-skill *ngFor="let skill of mySkills"
-                       [ngClass]="{'skill-icon': true, 'selected': skill == selectedSkill}"
-                       [skill]="skill"
-                       (click)="selectSkill(skill)"
-                       matTooltip="{{skill.name}}"
-                       matTooltipShowDelay="{{showDelay}}"
-                       matTooltipHideDelay="{{hideDelay}}"
-                       [matTooltipClass] ="{'skill-icon-tooltip': true}"></app-skill>
-
+          <div class="w-100 h-100"
+              *ngFor="let skill of mySkills"
+              [ngClass]="{'skill-icon': true, 'selected': isSkillSelected && skill == selectedSkill }"
+              (click)="toggleSkill(skill)"
+              matTooltip="{{skill.name}}"
+              matTooltipShowDelay="{{showDelay}}"
+              matTooltipHideDelay="{{hideDelay}}"
+              [matTooltipClass] ="{'skill-icon-tooltip': true}"
+              id="skill-{{skill?.name}}"
+              data-bs-toggle="collapse" data-bs-target="#skill-detail-container" aria-expanded="false" aria-controls="skill-detail-container">
+            <img ngSrc="{{skill?.iconURL}}" width="50" height="50" alt="">
+          </div>
           </div>
       </div>
   <a class="scroll-button next" [class.disabled]="isScrollTopRight" (click)="scrollRight()"><img ngSrc="assets/img/dropdown-icon.png" height="546" width="512" alt=""></a>
 </div>
 
-<div class="skill-detail-container">
-  <div [ngClass]="{'visible': isSkillSelected}" class="primary-container skill-detail">
+<div #skillDetailContainer id="skill-detail-container" class="skill-detail-container collapsed" >
+  <div class="primary-container skill-detail " [class.visible]="isSkillSelected" >
     <ul>
-      <li>{{selectedSkill?.name}}</li>
-      <li>{{selectedSkill?.currentLevel}}</li>
-      <li>{{selectedSkill?.goalLevel}}</li>
-      <li>{{selectedSkill?.exampleCode}}</li>
-      <li [innerHTML]=selectedSkill?.description></li>
+      <li>{{selectedSkill.name}}</li>
+      <li>{{selectedSkill.currentLevel}}</li>
+      <li>{{selectedSkill.goalLevel}}</li>
+      <li>{{selectedSkill.exampleCode}}</li>
+      <li [innerHTML]=selectedSkill.description></li>
     </ul>
   </div>
 

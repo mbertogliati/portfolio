@@ -1,6 +1,5 @@
 import {Component, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation} from '@angular/core';
 import {Skill} from "../skill";
-import {MatTooltipModule} from '@angular/material/tooltip';
 @Component({
   selector: 'app-skill-scroll',
   templateUrl: './skill-scroll.component.html',
@@ -8,15 +7,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   encapsulation: ViewEncapsulation.None
 })
 export class SkillScrollComponent implements AfterViewInit{
-
   private scrollAmount: number = 100;
 
   @ViewChild('skillScrollContainer') skillScrollContainer?: ElementRef<HTMLDivElement>;
-
+  @ViewChild('skillDetailContainer') skillDetailContainer?: ElementRef<HTMLDivElement>;
   isSkillSelected : boolean = false;
   isScrollTopLeft : boolean = true;
   isScrollTopRight : boolean = false;
-  showDelay = 100;
+  showDelay = 300;
   hideDelay = 100;
   mySkills : Skill[] = [
     {
@@ -154,5 +152,9 @@ export class SkillScrollComponent implements AfterViewInit{
     }
     this.isSkillSelected = true;
     this.selectedSkill = skill;
+  }
+  public toggleSkill(skill: Skill): void{
+    this.selectSkill(skill);
+
   }
 }
