@@ -1,4 +1,5 @@
 import {Component, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation} from '@angular/core';
+import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
 import {Skill} from "../skill";
 @Component({
   selector: 'app-skill-scroll',
@@ -125,6 +126,7 @@ export class SkillScrollComponent implements AfterViewInit{
   selectedSkill : Skill = this.mySkills[0];
   ngAfterViewInit(): void {
     this.updateScrollButtons();
+
   }
   private scroll(value: number): void {
     this.skillScrollContainer ? this.skillScrollContainer.nativeElement.scrollLeft += value : undefined ;

@@ -11,7 +11,7 @@
               matTooltipHideDelay="{{hideDelay}}"
               [matTooltipClass] ="{'skill-icon-tooltip': true}"
               id="skill-{{skill?.name}}"
-              data-bs-toggle="collapse" data-bs-target="#skill-detail-container" aria-expanded="false" aria-controls="skill-detail-container">
+              [attr.aria-expanded]="isSkillSelected">
             <img ngSrc="{{skill?.iconURL}}" width="50" height="50" alt="">
           </div>
           </div>
@@ -19,7 +19,7 @@
   <a class="scroll-button next" [class.disabled]="isScrollTopRight" (click)="scrollRight()"><img ngSrc="assets/img/dropdown-icon.png" height="546" width="512" alt=""></a>
 </div>
 
-<div #skillDetailContainer id="skill-detail-container" class="skill-detail-container collapsed" >
+<div #collapse="ngbCollapse" [(ngbCollapse)]="!isSkillSelected" class="skill-detail-container" >
   <div class="primary-container skill-detail " [class.visible]="isSkillSelected" >
     <ul>
       <li>{{selectedSkill.name}}</li>
