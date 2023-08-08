@@ -13,6 +13,7 @@ import { WorkComponent } from './pages/work/work.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AppRoutingModule,
         NgOptimizedImage,
       SkillModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      NgbModule
     ],
   providers: [],
   bootstrap: [AppComponent]
