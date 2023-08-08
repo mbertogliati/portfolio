@@ -2,7 +2,6 @@
 $scroll-height: 4rem;
 $scroll-gap: 4rem;
 $skill-icon-transition: 0.25s ease-out;
-$skill-detail-transition: 0.3s ease-in;
 app-skill-scroll{
   display: flex;
   flex-direction: column;
@@ -119,17 +118,17 @@ app-skill-scroll{
 }
 .primary-container.skill-detail{
   max-width: 720px;
-  transform: translateY(-400px);
   position: relative;
   opacity: 0;
-  transition: $skill-detail-transition;
+  transition: 0.5s;
 }
 .skill-detail-container{
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
 .skill-detail.visible{
-  transform: translateY(0);
   opacity: 1;
-  transition: $skill-detail-transition;
+  transition: 0.5s;
 }
 
