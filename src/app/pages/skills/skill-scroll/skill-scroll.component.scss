@@ -123,7 +123,10 @@ app-skill-scroll{
 .skill-detail-container{
   overflow: hidden;
   display: flex;
-  max-width: 720px;
+  height: 340px;
+  //max-height: fit-content !important;
+  justify-content: center;
+  width: 100%;
   align-items: flex-end;
   opacity: 0;
   transition: 0.5s;
@@ -132,4 +135,7 @@ app-skill-scroll{
   opacity: 1;
   transition: 0.5s;
 }
-
+#last-skill-detail{
+  position: absolute;
+  z-index: -1;
+}

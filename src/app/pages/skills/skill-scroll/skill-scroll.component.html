@@ -2,24 +2,23 @@
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
       <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
         <div id="skill-scroll">
-          <div class="w-100 h-100"
-              *ngFor="let skill of mySkills"
-              [ngClass]="{'skill-icon': true, 'selected': isSkillSelected && skill == selectedSkill }"
-              (click)="toggleSkill(skill)"
-              matTooltip="{{skill.name}}"
-              matTooltipShowDelay="{{showDelay}}"
-              matTooltipHideDelay="{{hideDelay}}"
-              [matTooltipClass] ="{'skill-icon-tooltip': true}"
-              id="skill-{{skill?.name}}"
-              [attr.aria-expanded]="isSkillSelected">
-            <img ngSrc="{{skill?.iconURL}}" width="50" height="50" alt="">
-          </div>
-          </div>
+            <app-icon *ngFor="let skill of mySkills"
+                        [icon] = skill
+                       [ngClass]="{'skill-icon': true, 'selected': skill == selectedSkill}"
+                       (click)="toggleSkill(skill)"
+                       [attr.aria-expanded]="selectedSkill != undefined">
+            </app-icon>
+        </div>
       </div>
   <a class="scroll-button next" [class.disabled]="isScrollTopRight" (click)="scrollRight()"><img ngSrc="assets/img/dropdown-icon.png" height="546" width="512" alt=""></a>
 </div>
 
-<div #collapse="ngbCollapse" [(ngbCollapse)]="!isSkillSelected" class="skill-detail-container pb-1" [class.visible]="isSkillSelected">
-  <app-skill-detail [toLeft] = "toLeft" [skill] = selectedSkill class="primary-container skill-detail"></app-skill-detail>
-
+<div>
+  <div class="w-100" #collapse="ngbCollapse" (hidden)="detailHidden()" [(ngbCollapse)]="!isSkillDetailVisible">
+    <div class="skill-detail-container position-relative " [class.visible]="isSkillDetailVisible">
+      <app-skill-detail id="last-skill-detail" *ngIf="lastSelectedSkill" [skill] ="lastSelectedSkill"></app-skill-detail>
+    <app-skill-detail [@detail-slide]="lastSelectedSkill? lastSelectedSkill.name : undefined" [skill] = selectedSkill></app-skill-detail>
+    </div>
+  </div>
 </div>
+

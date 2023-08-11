@@ -1,20 +1,30 @@
 import {Component, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation} from '@angular/core';
 import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
 import {Skill} from "../skill";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 @Component({
   selector: 'app-skill-scroll',
   templateUrl: './skill-scroll.component.html',
   styleUrls: ['./skill-scroll.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('detail-slide', [
+      transition('* => *', [
+        style({transform: 'translateY(-120%)'}),
+        animate("0.4s ease-in-out")
+      ])
+    ])]
 })
 export class SkillScrollComponent implements AfterViewInit{
   private scrollAmount: number = 100;
 
+
   @ViewChild('skillScrollContainer') skillScrollContainer?: ElementRef<HTMLDivElement>;
   @ViewChild('skillDetailContainer') skillDetailContainer?: ElementRef<HTMLDivElement>;
-  isSkillSelected : boolean = false;
+
   isScrollTopLeft : boolean = true;
   isScrollTopRight : boolean = false;
+  isSkillDetailVisible : boolean = false;
   toLeft : boolean = false;
   showDelay = 300;
   hideDelay = 100;
@@ -124,13 +134,13 @@ export class SkillScrollComponent implements AfterViewInit{
         "- JSON<br>"
     },];
 
-  selectedSkill : Skill = this.mySkills[0];
+  selectedSkill : Skill | undefined;
+  lastSelectedSkill : Skill | undefined;
   ngAfterViewInit(): void {
     this.updateScrollButtons();
-
   }
   private scroll(value: number): void {
-    this.skillScrollContainer ? this.skillScrollContainer.nativeElement.scrollLeft += value : undefined ;
+    this.skillScrollContainer ? this.skillScrollContainer.nativeElement.scrollLeft += value : undefined;
   }
   private updateScrollButtons(): void {
     if(this.skillScrollContainer){
@@ -149,15 +159,19 @@ export class SkillScrollComponent implements AfterViewInit{
     this.updateScrollButtons();
   }
   public selectSkill(skill: Skill): void {
-    if(this.isSkillSelected && this.selectedSkill === skill) {
-      this.isSkillSelected = false;
-      return;
+    if (this.selectedSkill != skill) {
+      this.lastSelectedSkill = this.selectedSkill;
+      this.selectedSkill = skill;
+      this.isSkillDetailVisible = true;
+    } else {
+      this.isSkillDetailVisible = false;
     }
-    this.isSkillSelected = true;
-    this.selectedSkill = skill;
   }
   public toggleSkill(skill: Skill): void{
-    this.toLeft = this.mySkills.findIndex(s => s === skill) < this.mySkills.findIndex(s => s === this.selectedSkill);
     this.selectSkill(skill);
   }
+  detailHidden() {
+    this.selectedSkill = this.lastSelectedSkill = undefined;
+  }
+
 }

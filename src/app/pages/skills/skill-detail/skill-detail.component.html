@@ -1,0 +1,13 @@
+<div id="skill-detail" class="primary-container mb-2 skill-detail">
+  <ul>
+    <li>{{mySkill?.name}}</li>
+    <li>{{mySkill?.currentLevel}}</li>
+    <li>{{mySkill?.goalLevel}}</li>
+    <li>{{mySkill?.exampleCode}}</li>
+    <li [innerHTML]=mySkill?.description></li>
+  </ul>
+</div>
+<!--app-icon-detail *ngIf="includeItself"
+                  [includeItself]="false"
+                  [icon] = previousSkill
+                  id="icon-detail-previous"></app-icon-detail-->

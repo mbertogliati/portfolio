@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import { SkillComponent } from './skill/skill.component';
+import { IconComponent } from '../../shared/icon/icon.component';
 import { SkillsComponent } from "./skills.component";
 import { SkillScrollComponent } from './skill-scroll/skill-scroll.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
@@ -10,7 +10,7 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 
 @NgModule({
   declarations: [
-    SkillComponent,
+    IconComponent,
     SkillsComponent,
     SkillScrollComponent,
     SkillDetailComponent
