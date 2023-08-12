@@ -76,6 +76,7 @@
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
+
   gap: 1rem;
   row-gap: 1rem;
   padding: 1rem;
@@ -86,6 +87,7 @@
   width: fit-content;
   height: 6rem;
   margin: 0 !important;
+  flex: 1 0 auto;
   &.approved{
     background-color: $success;
   }
@@ -99,4 +101,40 @@
     background-color: $custom-gray;
   }
 
+}
+.courses-row{
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+}
+.courses-container{
+
+  .primary-container.course{
+    aspect-ratio: 1;
+    height: 12rem;
+    width: auto;
+    justify-content: center;
+    margin: 0 !important;
+
+    *{
+      width: fit-content;
+    }
+    .course-title{
+      align-self: flex-start;
+      color: $secondary;
+      text-align: center;
+      width: 100% !important;
+    }
+    .course-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      img{
+        aspect-ratio: 1;
+        height: 5rem;
+        width: auto;
+      }
+    }
+  }
 }
