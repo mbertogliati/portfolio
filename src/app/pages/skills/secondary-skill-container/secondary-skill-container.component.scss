@@ -1,0 +1,18 @@
+@import 'main';
+.primary-container{
+  justify-content: center;
+  gap: 1rem;
+  max-width: 30rem;
+  .icon{
+    aspect-ratio: 1;
+    height: 4rem;
+    width: auto;
+  }
+  .secondary-skill-title{
+    color: $secondary;
+  }
+  .icon-container {
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+}
