@@ -6,6 +6,7 @@ import { SkillScrollComponent } from './skill-scroll/skill-scroll.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+import { SecondarySkillContainerComponent } from './secondary-skill-container/secondary-skill-container.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
     IconComponent,
     SkillsComponent,
     SkillScrollComponent,
-    SkillDetailComponent
+    SkillDetailComponent,
+    SecondarySkillContainerComponent
   ],
     imports: [
         CommonModule,

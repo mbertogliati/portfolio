@@ -49,3 +49,20 @@ h4.skill-title-problem-solving{
     width: 1.5rem;
   }
 }
+.icon-tooltip > div{
+  background-color: rgba(0, 0, 0, 0.24) !important;
+}
+.icon{
+  aspect-ratio: 1;
+  height: 4rem;
+  width: auto;
+  padding: 0.5rem;
+}
+#skill-coming-soon{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  opacity: 0.2;
+}
