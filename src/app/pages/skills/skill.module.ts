@@ -24,7 +24,8 @@ import { SecondarySkillContainerComponent } from './secondary-skill-container/se
         NgbCollapse
     ],
   exports: [
-    SkillsComponent
+    SkillsComponent,
+    IconComponent
   ]
 })
 export class SkillModule { }
