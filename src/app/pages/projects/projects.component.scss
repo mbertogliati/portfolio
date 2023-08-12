@@ -1,10 +1,14 @@
+@import "main";
 img{
   aspect-ratio: 1;
   height: auto;
   width: 100%;
 }
 .img-container{
-  width: 40%;
+  padding: 0 35%;
+  @include media-breakpoint-down(lg) {
+    padding: 0 20%;
+  }
 }
 span{
   text-align: center;
