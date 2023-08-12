@@ -14,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -27,14 +28,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     WorkComponent,
     ContactComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-      SkillModule,
-      BrowserAnimationsModule,
-      NgbModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    SkillModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    MatTabsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

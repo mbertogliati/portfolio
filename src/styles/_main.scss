@@ -6,6 +6,8 @@ $white: #fff;
 $marine-blue: #0A192F;
 $block-default: #272E56;
 $font-color-default: $white;
+$indigo: #2E3786;
+$custom-gray: #313131;
 
 $primary:       #00E5D8 !default;
 $secondary: #FF6285 !default;
@@ -73,6 +75,7 @@ h2.page-title::before{
   align-items: center;
   display: flex;
   gap: 0.8rem;
+
   &::before{
     display: inline-block;
     position: relative;
@@ -83,6 +86,41 @@ h2.page-title::before{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+}
+.color-reference{
+  @extend %icon-before;
+  text-wrap: nowrap;
+  &::before{
+    width: 1rem;
+    border-radius: 50%;
+  }
+  &.success::before{
+    background-color: $success;
+  }
+  &.danger::before{
+    background-color: $danger;
+  }
+  &.warning::before{
+    background-color: $warning;
+  }
+  &.info::before{
+    background-color: $info;
+  }
+  &.primary::before{
+    background-color: $primary;
+  }
+  &.secondary::before{
+    background-color: $secondary;
+  }
+  &.dark::before{
+    background-color: $dark;
+  }
+  &.indigo::before{
+    background-color: $indigo;
+  }
+  &.dark-gray::before{
+    background-color: $custom-gray;
   }
 }
 
