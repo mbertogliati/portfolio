@@ -1,13 +1,18 @@
-<div id="skill-detail" class="primary-container mb-2 skill-detail">
-  <ul>
-    <li>{{mySkill?.name}}</li>
-    <li>{{mySkill?.currentLevel}}</li>
-    <li>{{mySkill?.goalLevel}}</li>
-    <li>{{mySkill?.exampleCode}}</li>
-    <li [innerHTML]=mySkill?.description></li>
-  </ul>
+<div #skillDetailMainContainer class="d-flex flex-column gap-4">
+  <div class="skill-header">
+    <img src="{{mySkill?.iconURL}}"/>
+    <h2 class="skill-name">{{mySkill?.name}}</h2>
+  </div>
+  <div class="d-flex flex-wrap justify-content-between">
+    <app-progress-bar class="mb-2" [primaryProgress]="mySkill ? mySkill.currentLevel : 0"></app-progress-bar>
+    <div class="d-flex gap-4 mb-2">
+      <span class="color-reference primary">Current</span>
+      <span class="color-reference indigo">2023 Goal</span>
+    </div>
+  </div>
+
+  <div class="example-code-container"><pre><code class="language-javascript" [innerHTML]= "mySkill? hljs.highlight(mySkill.exampleCode,{language: mySkill.name.toLowerCase()}).value : ''"></code></pre></div>
+  <div id="skill-description" class="primary-container mb-2 skill-detail" [innerHTML]=mySkill?.description>
+
+  </div>
 </div>
-<!--app-icon-detail *ngIf="includeItself"
-                  [includeItself]="false"
-                  [icon] = previousSkill
-                  id="icon-detail-previous"></app-icon-detail-->

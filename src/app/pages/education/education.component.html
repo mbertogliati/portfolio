@@ -50,22 +50,24 @@
     </div>
     <div class="courses-container container">
       <h3 class="mb-1">Courses</h3>
-      <div class="courses-row d-flex gap-5 my-5">
+      <div class="courses-row container gap-5 my-5">
+        <div class="row justify-content-center">
 
-        <div class="primary-container course">
-          <h5 class="course-title">Full Stack Dev</h5>
+          <div class="col-md primary-container course m-2">
+            <h5 class="course-title">Full Stack Dev</h5>
             <div class="course-icon">
               <app-icon  [icon]="{name:'Laravel', iconURL:'/assets/img/skills/frameworks/laravel.png'}"></app-icon>
             </div>
-        </div>
-
-        <div class="primary-container course">
-          <h5 class="course-title">Python</h5>
-          <div class="course-icon">
-            <app-icon  [icon]="{name:'Python', iconURL:'/assets/img/skills/python.png'}"></app-icon>
           </div>
-        </div>
 
+          <div class="col-md primary-container course m-2">
+            <h5 class="course-title">Python</h5>
+            <div class="course-icon">
+              <app-icon  [icon]="{name:'Python', iconURL:'/assets/img/skills/python.png'}"></app-icon>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>

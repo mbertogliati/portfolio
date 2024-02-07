@@ -1,27 +1,27 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  AfterViewChecked,
+  Component,
+  Input,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef, OnChanges, Output, EventEmitter, AfterViewInit
+} from '@angular/core';
 import {Skill} from "../skill";
-import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import hljs from "highlight.js";
 
 @Component({
   selector: 'app-skill-detail',
   templateUrl: './skill-detail.component.html',
   styleUrls: ['./skill-detail.component.scss'],
-
+  encapsulation: ViewEncapsulation.None
 })
-export class SkillDetailComponent {
-  mySkill : Skill | undefined = undefined;
-  previousSkill : Skill | undefined = undefined;
-  slideToLeft: boolean = false;
-  slideToRight: boolean = false;
-  @Input() set skill(skill: Skill | undefined) {
-      this.previousSkill = this.mySkill;
-      this.mySkill = skill;
+export class SkillDetailComponent{
+  protected readonly hljs = hljs;
+  private _skill : Skill | undefined = undefined;
+  @Input() set skill(newSkill: Skill | undefined) {
+    this._skill = newSkill;
   };
-  @Input() includeItself: boolean = true;
-  @Input() enabled: boolean = true;
-  @Input() set toLeft(toLeft: boolean) {
-    this.slideToLeft = toLeft;
-    this.slideToRight = !toLeft;
-    this.enabled = false;
-  } boolean = false;
+  get skill() {
+    return this._skill;
+  }
 }

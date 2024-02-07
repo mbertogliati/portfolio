@@ -1,8 +1,13 @@
+@import 'main';
 :host{
   height: fit-content;
 }
 #navbar-container{
-  background-color: inherit;
+  .navbar-toggler{
+    padding: 0;
+  }
+  background-color: $body-bg-dark;
+  width: 100%;
 }
 #page-header{
     font-weight: normal;

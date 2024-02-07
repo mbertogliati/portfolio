@@ -1,0 +1,76 @@
+@import "main";
+$primary: #00E5D8FF;
+#contact-page-container{
+  background-color: #232932;
+}
+input, textarea{
+  font-weight: 200 !important;
+  font-size: 1.1rem !important;
+  &::placeholder{
+    opacity: 0.3;
+  }
+  background-color: #1D2229 !important;
+  border: none !important;
+}
+textarea{
+  height: 250px;
+}
+mark{
+  background-color: transparent;
+  color: $primary;
+  padding: 0;
+}
+p{
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+button[type="submit"]{
+  background-color: darken($primary,10%);
+  font-size: 1.1rem;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.5s;
+  opacity: 0.9;
+  &:hover{
+    position: relative;
+    transform: translateY(-0.2rem);
+    transition: 0.2s;
+    background-color: darken($primary,10%) !important;
+    color: white !important;
+    opacity: 1;
+  }
+}
+.messi-container{
+  width: 200px;
+  height: fit-content;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  img{
+    aspect-ratio: auto;
+    height: auto;
+    width: 100%;
+  }
+}
+span{
+  mix-blend-mode: normal;
+  text-wrap: nowrap;
+  color: $primary;
+  opacity: 0.4;
+  font-weight: 500;
+  mark{
+    color: #fff8bb;
+  }
+}
+a{
+  text-decoration: none;
+}
+.messi-col{
+  max-width: 33% !important;
+  @include media-breakpoint-down(lg){
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto;
+  }
+}

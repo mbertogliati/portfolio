@@ -1,24 +1,21 @@
 <div class="container d-flex" id="skill-scroll-main-container">
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
-      <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
-        <div id="skill-scroll">
-            <app-icon *ngFor="let skill of mySkills"
-                        [icon] = skill
-                       [ngClass]="{'skill-icon': true, 'selected': skill == selectedSkill}"
-                       (click)="toggleSkill(skill)"
-                       [attr.aria-expanded]="selectedSkill != undefined">
-            </app-icon>
-        </div>
-      </div>
+
+  <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
+    <div id="skill-scroll">
+      <app-icon *ngFor="let skill of mySkills"
+                [icon] = skill
+                [ngClass]="{'skill-icon': true, 'selected': skill == selectedSkill}"
+                (click)="toggleSkill(skill)"
+                [attr.aria-expanded]="selectedSkill != undefined">
+      </app-icon>
+    </div>
+  </div>
   <a class="scroll-button next" [class.disabled]="isScrollTopRight" (click)="scrollRight()"><img ngSrc="assets/img/dropdown-icon.png" height="546" width="512" alt=""></a>
 </div>
 
-<div>
-  <div class="w-100" #collapse="ngbCollapse" (hidden)="detailHidden()" [(ngbCollapse)]="!isSkillDetailVisible">
-    <div class="skill-detail-container position-relative " [class.visible]="isSkillDetailVisible">
-      <app-skill-detail id="last-skill-detail" *ngIf="lastSelectedSkill" [skill] ="lastSelectedSkill"></app-skill-detail>
-    <app-skill-detail [@detail-slide]="lastSelectedSkill? lastSelectedSkill.name : undefined" [skill] = selectedSkill></app-skill-detail>
-    </div>
-  </div>
+<div class="w-100">
+  <app-skill-detail-animator [skill]="selectedSkill"></app-skill-detail-animator>
 </div>
+
 

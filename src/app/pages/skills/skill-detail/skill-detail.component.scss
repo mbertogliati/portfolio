@@ -1,7 +1,30 @@
+@import "main";
+@import "highlight-themes/atom-one-dark";
+:root{
+  width: 100%;
+  min-width: 250px;
+}
 #skill-detail-previous{
   position: absolute;
   display: inherit;
   top: 0;
   left: 0;
   z-index: -1;
+}
+.skill-header{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  img{
+    height: 3.5rem;
+    width: auto;
+    aspect-ratio: 1;
+  }
+  .skill-name{
+    margin: 0;
+  }
+}
+.progress-bar-col, app-progress-bar{
+  width: 250px;
+  height: 18px;
 }

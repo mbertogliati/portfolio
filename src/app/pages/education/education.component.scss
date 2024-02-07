@@ -111,10 +111,8 @@
 
   .primary-container.course{
     aspect-ratio: 1;
-    height: 12rem;
-    width: auto;
+    max-width: 12rem;
     justify-content: center;
-    margin: 0 !important;
 
     *{
       width: fit-content;

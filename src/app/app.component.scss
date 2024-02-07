@@ -1,9 +1,10 @@
-:host {
-    width: 100%;
+:host, :root {
+  min-width: 100vw;
+  min-height: 100vh;
 }
-//navbar-toggler overrides
-.navbar-toggler{
-    border: none;
+html{
+  min-width: 100vw;
+  min-height: 100vh;
 }
 //index.html styles
 #main-container{

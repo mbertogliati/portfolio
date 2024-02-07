@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {SkillModule} from "./pages/skills/skill.module";
+import {SharedModule} from "./shared/shared.module";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +14,8 @@ import { WorkComponent } from './pages/work/work.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatTabsModule} from "@angular/material/tabs";
+import { SkillDetailAnimatorComponent } from './pages/skills/skill-detail-animator/skill-detail-animator.component';
 
 
 @NgModule({
@@ -27,17 +28,21 @@ import {MatTabsModule} from "@angular/material/tabs";
     EducationComponent,
     WorkComponent,
     ContactComponent,
+    SkillDetailAnimatorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
     SkillModule,
+    SharedModule,
     BrowserAnimationsModule,
-    NgbModule,
     MatTabsModule
   ],
   providers: [],
+  exports: [
+    SkillDetailAnimatorComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

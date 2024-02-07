@@ -123,4 +123,7 @@ h2.page-title::before{
     background-color: $custom-gray;
   }
 }
-
+.navbar-toggler:focus{
+  outline: none;
+  box-shadow: none !important;
+}

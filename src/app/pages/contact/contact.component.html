@@ -1,1 +1,41 @@
-<p>contact works!</p>
+<div class="container-fluid page-container" id="contact-page-container">
+  <div class="container d-flex flex-column gap-4">
+    <div class="row container">
+      <p><mark>Contact me</mark> for any matter and I won't take long to respond.</p>
+      <p>Feel free to leave any comments, ideas & suggestions!</p>
+    </div>
+    <div class="row container">
+
+      <div class="col">
+        <form>
+          <div class="mb-3">
+            <label for="name-input" class="form-label d-none">Name</label>
+            <input type="text" class="form-control form-control-lg" id="name-input" placeholder="Name" aria-describedby="name">
+          </div>
+          <div class="mb-3">
+            <label for="email-input" class="form-label d-none">Email address</label>
+            <input type="email" class="form-control form-control-lg" id="email-input" placeholder="Email" aria-describedby="email">
+          </div>
+          <div class="mb-3">
+            <label for="subject-input" class="form-label d-none">Subject</label>
+            <input type="text" class="form-control form-control-lg" id="subject-input" placeholder="Subject" aria-describedby="name">
+          </div>
+          <div class="mb-3">
+            <label for="message-textarea" class="form-label d-none">Example textarea</label>
+            <textarea class="form-control form-control-lg" id="message-textarea" placeholder="Your Message..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col messi-col d-flex justify-content-center">
+        <a href="https://www.youtube.com/watch?v=DdpyIit7d18" target="_blank" class="container justify-content-center w-auto">
+          <div class="messi-container">
+            <img ngSrc="assets/img/messi.png" [width]="456" [height]="947"  alt="">
+          </div>
+          <span>WORLD <mark>CHAMPIONS</mark> 2022</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>

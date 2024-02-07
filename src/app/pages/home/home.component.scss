@@ -4,31 +4,38 @@
 }
 #home-page-container{
   .row{
-    width: 100%;
     max-width: 80rem;
     justify-content: center;
   }
   .col-6{
     width: fit-content;
   }
+  h1{
+    white-space: nowrap;
+  }
 }
 #home-introduction{
-  width: fit-content;
+  max-width: 400px;
+  h1{
+    white-space: nowrap;
+  };
   span{
     font-family: 'Courier Prime', Courier, monospace;
     color: $primary;
     font-size: larger;
     font-weight: 500;
     width: fit-content;
+    margin-bottom: 0.8rem;
   }
 }
-#me img{
-  width: 100%;
+#me {
   max-width: 350px;
-  min-width: 200px;
-  aspect-ratio: 1;
-  object-fit: cover;
-  clip-path: circle(50% at center);
+  img{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    clip-path: circle(50% at center);
+  }
 }
 #home-footer {
   a:hover {

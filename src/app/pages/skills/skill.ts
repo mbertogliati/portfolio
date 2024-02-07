@@ -1,8 +1,8 @@
 export interface Skill {
-  name: String;
-  iconURL: String;
+  name: string;
+  iconURL: string;
   currentLevel: number;
   goalLevel: number;
-  exampleCode: String;
-  description: String;
+  exampleCode: string;
+  description: string;
 }

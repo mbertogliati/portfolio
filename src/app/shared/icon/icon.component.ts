@@ -1,6 +1,4 @@
 import {Component, Input} from '@angular/core';
-
-import {Skill} from "../../pages/skills/skill";
 import {Icon} from "./icon";
 
 @Component({

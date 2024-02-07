@@ -1,0 +1,8 @@
+<div class="progress-bar-container {{class}}">
+  <div class="progress-bar-background"></div>
+  <div class="progress-bar-secondary" [ngStyle]="{'background-color': secondaryColor, 'width': 'calc(100% * '+secondaryProgress+')'}"></div>
+  <div class="progress-bar-primary" [ngStyle]="{'background-color': primaryColor, 'width': 'calc(100% * '+primaryProgress+')'}"></div>
+  <div class="progress-bar-divisors-container">
+    <div *ngFor="let _ of [].constructor(divisions > 0 ? divisions : 1)" class="progress-bar-divisor"></div>
+  </div>
+</div>
