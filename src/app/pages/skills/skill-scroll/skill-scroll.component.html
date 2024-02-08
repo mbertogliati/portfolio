@@ -1,9 +1,10 @@
+<app-switch/>
 <div class="container d-flex" id="skill-scroll-main-container">
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
 
   <div #skillScrollContainer id="skill-scroll-container" (scroll)="onScroll($event)">
     <div id="skill-scroll">
-      <app-icon *ngFor="let skill of mySkills"
+      <app-icon *ngFor="let skill of languagesAndFrameworks.programmingLanguages"
                 [icon] = skill
                 [ngClass]="{'skill-icon': true, 'selected': skill == selectedSkill}"
                 (click)="toggleSkill(skill)"
