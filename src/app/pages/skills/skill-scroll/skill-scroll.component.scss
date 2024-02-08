@@ -87,13 +87,19 @@ app-skill-scroll{
   }
 }
 .skill-detail-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
   @include media-breakpoint-only(lg) {
-    width: 6*$scroll-height + 5*$scroll-gap;
+    max-width: 6*$scroll-height + 5*$scroll-gap;
   }
   @include media-breakpoint-only(xl) {
-    width: 7*$scroll-height + 6*$scroll-gap;
+    max-width: 7*$scroll-height + 6*$scroll-gap;
   }
   @include media-breakpoint-only(xxl) {
+    max-width: 7*$scroll-height + 6*$scroll-gap;
     justify-content: center;
   }
 }
@@ -129,22 +135,6 @@ app-skill-scroll{
 .primary-container.skill-detail{
   position: relative;
   min-width: 100%;
-}
-.skill-detail-container{
-  overflow: hidden;
-  display: flex;
-  //height: 600px;
-  //max-height: fit-content !important;
-  max-width: 100%;
-  justify-content: center;
-  width: 100%;
-  align-items: flex-end;
-  opacity: 0;
-  transition: 0.5s;
-}
-.skill-detail-container.visible{
-  opacity: 1;
-  transition: 0.5s;
 }
 #last-skill-detail{
   position: absolute;

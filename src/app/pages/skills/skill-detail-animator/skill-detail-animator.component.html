@@ -1,4 +1,6 @@
-<div>
-  <app-skill-detail [skill]="previouslySelectedSkill"/>
-  <app-skill-detail [skill]="currentSkill"/>
+<div id="animation-container" [style]="getContainerStyle()">
+  <div id="current-skill-wrapper" #selectedSkillDetail [@detail-slide-in] = "currentSkill ? currentSkill.name : 'none'">
+    <app-skill-detail [skill]="currentSkill"  (heightChange)="handleSelectedSkillContainerChange($event)"/>
+  </div>
 </div>
+<app-skill-detail class="previously-selected-skill" [skill]="previouslySelectedSkill"/>

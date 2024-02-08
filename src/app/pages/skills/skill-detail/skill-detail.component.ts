@@ -15,13 +15,22 @@ import hljs from "highlight.js";
   styleUrls: ['./skill-detail.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SkillDetailComponent{
+export class SkillDetailComponent implements AfterViewChecked{
   protected readonly hljs = hljs;
   private _skill : Skill | undefined = undefined;
+  height : number = 0;
+  @ViewChild('skillDetailMainContainer') skillDetailContainer? : ElementRef<HTMLDivElement>;
   @Input() set skill(newSkill: Skill | undefined) {
     this._skill = newSkill;
   };
+  @Output() heightChange = new EventEmitter<number>();
   get skill() {
     return this._skill;
+  }
+  ngAfterViewChecked(): void {
+    if (this.skillDetailContainer?.nativeElement.offsetHeight && this.height != this.skillDetailContainer?.nativeElement.offsetHeight) {
+      this.height = this.skillDetailContainer?.nativeElement.offsetHeight || 0;
+      this.heightChange.emit(this.height);
+    }
   }
 }

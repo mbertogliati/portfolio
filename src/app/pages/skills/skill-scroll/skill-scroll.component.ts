@@ -10,6 +10,7 @@ import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
 import {Skill} from "../skill";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {SkillDetailComponent} from "../skill-detail/skill-detail.component";
+import {SkillDetailAnimatorComponent} from "../skill-detail-animator/skill-detail-animator.component";
 
 @Component({
   selector: 'app-skill-scroll',
@@ -190,7 +191,11 @@ export class SkillScrollComponent implements AfterViewInit{
     this.updateScrollButtons();
   }
   public toggleSkill(skill: Skill): void{
-    this.selectedSkill = skill;
+    if(this.selectedSkill === skill){
+      this.selectedSkill = undefined;
+    }else{
+      this.selectedSkill = skill;
+    }
   }
 
   updateSkillDetailContainerHeight(height: number){

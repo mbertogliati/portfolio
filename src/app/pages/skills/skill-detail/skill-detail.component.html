@@ -1,18 +1,18 @@
-<div #skillDetailMainContainer class="d-flex flex-column gap-4">
+<div #skillDetailMainContainer class="d-flex flex-column gap-4 w-100" [class.hidden] = "!skill">
   <div class="skill-header">
-    <img src="{{mySkill?.iconURL}}"/>
-    <h2 class="skill-name">{{mySkill?.name}}</h2>
+    <img src="{{skill?.iconURL}}"/>
+    <h2 class="skill-name">{{skill?.name}}</h2>
   </div>
   <div class="d-flex flex-wrap justify-content-between">
-    <app-progress-bar class="mb-2" [primaryProgress]="mySkill ? mySkill.currentLevel : 0"></app-progress-bar>
+    <app-progress-bar class="mb-2" [primaryProgress]="skill ? skill.currentLevel : 0"></app-progress-bar>
     <div class="d-flex gap-4 mb-2">
       <span class="color-reference primary">Current</span>
       <span class="color-reference indigo">2023 Goal</span>
     </div>
   </div>
 
-  <div class="example-code-container"><pre><code class="language-javascript" [innerHTML]= "mySkill? hljs.highlight(mySkill.exampleCode,{language: mySkill.name.toLowerCase()}).value : ''"></code></pre></div>
-  <div id="skill-description" class="primary-container mb-2 skill-detail" [innerHTML]=mySkill?.description>
+  <div class="example-code-container"><pre><code class="language-javascript" [innerHTML]= "skill? hljs.highlight(skill.exampleCode,{language: skill.name.toLowerCase()}).value : ''"></code></pre></div>
+  <div id="skill-description" class="primary-container mb-2 skill-detail" [innerHTML]=skill?.description>
 
   </div>
 </div>

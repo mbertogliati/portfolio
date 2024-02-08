@@ -14,8 +14,8 @@
   <a class="scroll-button next" [class.disabled]="isScrollTopRight" (click)="scrollRight()"><img ngSrc="assets/img/dropdown-icon.png" height="546" width="512" alt=""></a>
 </div>
 
-<div class="w-100">
-  <app-skill-detail-animator [skill]="selectedSkill"></app-skill-detail-animator>
-</div>
+
+<app-skill-detail-animator class="skill-detail-container" [skill]="selectedSkill"></app-skill-detail-animator>
+
 
 

@@ -8,6 +8,7 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { SecondarySkillContainerComponent } from './secondary-skill-container/secondary-skill-container.component';
 import {SharedModule} from "../../shared/shared.module";
 import {AppModule} from "../../app.module";
+import {SkillDetailAnimatorComponent} from "./skill-detail-animator/skill-detail-animator.component";
 
 
 
@@ -16,16 +17,16 @@ import {AppModule} from "../../app.module";
     SkillsComponent,
     SkillScrollComponent,
     SkillDetailComponent,
-    SecondarySkillContainerComponent
+    SecondarySkillContainerComponent,
+    SkillDetailAnimatorComponent
   ],
-    imports: [
-        CommonModule,
-        NgOptimizedImage,
-        MatTooltipModule,
-        NgbCollapse,
-        SharedModule,
-        AppModule
-    ],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    MatTooltipModule,
+    NgbCollapse,
+    SharedModule
+  ],
   exports: [
     SkillsComponent,
     SkillDetailComponent

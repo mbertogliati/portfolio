@@ -15,8 +15,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from "@angular/material/tabs";
-import { SkillDetailAnimatorComponent } from './pages/skills/skill-detail-animator/skill-detail-animator.component';
-
 
 @NgModule({
   declarations: [
@@ -28,7 +26,6 @@ import { SkillDetailAnimatorComponent } from './pages/skills/skill-detail-animat
     EducationComponent,
     WorkComponent,
     ContactComponent,
-    SkillDetailAnimatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +37,6 @@ import { SkillDetailAnimatorComponent } from './pages/skills/skill-detail-animat
     MatTabsModule
   ],
   providers: [],
-  exports: [
-    SkillDetailAnimatorComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
