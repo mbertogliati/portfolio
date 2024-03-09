@@ -134,7 +134,7 @@ export const languagesAndFrameworks =
   frameworks : [
     {
       name: "Angular",
-      iconURL: "/assets/img/skills/angular.png",
+      iconURL: "/assets/img/skills/frameworks/angular.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
       exampleCode: "<app-component></app-component>",
@@ -151,7 +151,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "React",
-      iconURL: "/assets/img/skills/react.png",
+      iconURL: "/assets/img/skills/frameworks/react.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
       exampleCode: "ReactDOM.render(<App />, document.getElementById('root'));",
@@ -168,7 +168,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Spring Boot",
-      iconURL: "/assets/img/skills/spring.png",
+      iconURL: "/assets/img/skills/frameworks/spring.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
       exampleCode: "@RestController\n" +
@@ -191,7 +191,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Laravel",
-      iconURL: "/assets/img/skills/laravel.png",
+      iconURL: "/assets/img/skills/frameworks/laravel.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
       exampleCode: "Route::get('/hello', function () {\n" +
@@ -211,7 +211,7 @@ export const languagesAndFrameworks =
     },
     {
       name: ".NET",
-      iconURL: "/assets/img/skills/dotnet.png",
+      iconURL: "/assets/img/skills/frameworks/dotnet.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
       exampleCode: "public class HelloController : Controller\n" +

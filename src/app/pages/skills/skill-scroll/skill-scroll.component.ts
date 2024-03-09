@@ -17,6 +17,21 @@ import {languagesAndFrameworks} from "./skill-data";
   templateUrl: './skill-scroll.component.html',
   styleUrls: ['./skill-scroll.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('toggleLanguageMode', [
+      transition(':enter', [
+          style({opacity: '0%', transform: 'translateY(-100%)'}),
+          animate('300ms ease-in-out', style({opacity: '60%', transform: 'translateY(0%)'})),
+          animate('150ms ease-in-out', style({opacity: '100%'}))
+        ]
+      ),
+      transition(':enter', [
+          style({opacity: '100%',}),
+          animate('300ms ease-in-out', style({opacity: '0%', transform: 'translateY(100%)'}))
+        ]
+      )
+    ])
+  ]
 })
 export class SkillScrollComponent implements AfterViewInit{
   private scrollAmount: number = 100;
@@ -29,6 +44,7 @@ export class SkillScrollComponent implements AfterViewInit{
   @ViewChild('selectedSkillDetail') selectedSkillDetail?: ElementRef<SkillDetailComponent>;
   isScrollTopLeft : boolean = true;
   isScrollTopRight : boolean = false;
+  isLanguageMode : boolean = true;
   isSkillDetailVisible : boolean = false;
 
   toLeft : boolean = false;
@@ -67,6 +83,12 @@ export class SkillScrollComponent implements AfterViewInit{
     }else{
       this.selectedSkill = skill;
     }
+  }
+  public toggleLanguageMode(){
+    this.isLanguageMode = !this.isLanguageMode;
+  }
+  getSkills(): Skill[] {
+    return this.isLanguageMode ? languagesAndFrameworks.programmingLanguages : languagesAndFrameworks.frameworks;
   }
 
   updateSkillDetailContainerHeight(height: number){
