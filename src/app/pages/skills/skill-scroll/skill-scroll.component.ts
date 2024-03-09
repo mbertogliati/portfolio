@@ -21,13 +21,12 @@ import {languagesAndFrameworks} from "./skill-data";
     trigger('toggleLanguageMode', [
       transition(':enter', [
           style({opacity: '0%', transform: 'translateY(-100%)'}),
-          animate('300ms ease-in-out', style({opacity: '60%', transform: 'translateY(0%)'})),
-          animate('150ms ease-in-out', style({opacity: '100%'}))
+          animate('400ms ease-in-out', style({opacity: '100%', transform: 'translateY(0%)'})),
         ]
       ),
       transition(':enter', [
           style({opacity: '100%',}),
-          animate('300ms ease-in-out', style({opacity: '0%', transform: 'translateY(100%)'}))
+          animate('400ms ease-in-out', style({opacity: '0%', transform: 'translateY(100%)'}))
         ]
       )
     ])
