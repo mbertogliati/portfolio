@@ -7,8 +7,11 @@ import {Component, Input} from '@angular/core';
 })
 export class SwitchComponent {
   @Input() on : boolean = false;
-  @Input() label : { on: string, off: string} = { on: '', off: ''};
+  @Input() label : { on: string, off: string} | string = { on: '', off: ''};
   toggle() {
     this.on = !this.on;
+  }
+  getLabel() {
+    return typeof this.label === 'string' ? this.label : this.on ? this.label.on : this.label.off;
   }
 }
