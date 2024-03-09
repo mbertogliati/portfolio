@@ -1,5 +1,10 @@
-<div class="rounded-switch" [class.active] = "on" (click)="toggle()">
-  <div class="circle"  >
+<div class="switch-container">
+  <div class="rounded-switch" [class.active] = "on" (click)="toggle()">
+    <div class="switch-slide-effect-square">
 
+    </div>
+    <div class="circle"  >
+      <span>{{on ? label.on : label.off}}</span>
+    </div>
   </div>
 </div>
