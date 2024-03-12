@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="example-code-container"><pre><code class="language-javascript" [innerHTML]= "skill? hljs.highlight(skill.exampleCode,{language: skill.name.toLowerCase()}).value : ''"></code></pre></div>
+  <div class="example-code-container"><pre><code class="language-javascript" [innerHTML]= "skill? hljs.highlight(skill.exampleCode,{language: skill.language}).value : ''"></code></pre></div>
   <div id="skill-description" class="primary-container mb-2 skill-detail" [innerHTML]=skill?.description>
 
   </div>

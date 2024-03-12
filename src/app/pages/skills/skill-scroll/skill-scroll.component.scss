@@ -26,9 +26,11 @@ app-skill-scroll{
       padding-right: 0 !important;
       transition: 0.3s ;
     }
-    :hover{
-      padding: 0.8rem;
-      transition: 0.1s;
+    &:not(.disabled){
+      :hover{
+        padding: 0.8rem;
+        transition: 0.1s;
+      }
     }
 
   }
@@ -42,6 +44,7 @@ app-skill-scroll{
   }
   .scroll-button.disabled{
     opacity: 0.2;
+    cursor: auto;
   }
   @include media-breakpoint-only(xxl) {
     .scroll-button{
@@ -55,25 +58,26 @@ app-skill-scroll{
   scroll-snap-type: x mandatory;
   touch-action: manipulation;
   overflow: auto;
+  transition: 0.4s ease-in-out;
   padding: 0;
   @include media-breakpoint-only(xs) {
     $scroll-gap-sm: 1.8rem;
-    width: 3*$scroll-height + 2*$scroll-gap-sm;
+    max-width: 3*$scroll-height + 2*$scroll-gap-sm;
     #skill-scroll{
       gap: $scroll-gap-sm;
     }
   }
   @include media-breakpoint-only(sm) {
-    width: 3*$scroll-height + 2*$scroll-gap;
+    max-width: 3*$scroll-height + 2*$scroll-gap;
   }
   @include media-breakpoint-only(md) {
-    width: 4*$scroll-height + 3*$scroll-gap;
+    max-width: 4*$scroll-height + 3*$scroll-gap;
   }
   @include media-breakpoint-only(lg) {
-    width: 6*$scroll-height + 5*$scroll-gap;
+    max-width: 6*$scroll-height + 5*$scroll-gap;
   }
   @include media-breakpoint-only(xl) {
-    width: 7*$scroll-height + 6*$scroll-gap;
+    max-width: 7*$scroll-height + 6*$scroll-gap;
   }
   @include media-breakpoint-only(xxl) {
     justify-content: center;

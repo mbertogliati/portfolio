@@ -1,9 +1,10 @@
 import {Skill} from "../skill";
-export const languagesAndFrameworks =
+export const languagesAndFrameworks : {programmingLanguages: Skill[], frameworks: Skill[]} =
 {
   programmingLanguages :[
     {
       name: "Javascript",
+      language: "javascript",
       iconURL: "/assets/img/skills/js.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -19,6 +20,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "C",
+      language: "c",
       iconURL: "/assets/img/skills/c.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -37,6 +39,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Java",
+      language: "java",
       iconURL: "/assets/img/skills/java.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -51,6 +54,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Python",
+      language: "python",
       iconURL: "/assets/img/skills/python.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -66,6 +70,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Ruby",
+      language: "ruby",
       iconURL: "/assets/img/skills/ruby.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -84,6 +89,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Scala",
+      language: "scala",
       iconURL: "/assets/img/skills/scala.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -100,6 +106,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Haskell",
+      language: "haskell",
       iconURL: "/assets/img/skills/haskell.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -117,6 +124,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "PHP",
+      language: "php",
       iconURL: "/assets/img/skills/php.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -134,6 +142,7 @@ export const languagesAndFrameworks =
   frameworks : [
     {
       name: "Angular",
+      language: "javascript",
       iconURL: "/assets/img/skills/frameworks/angular.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -151,6 +160,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "React",
+      language: "javascript",
       iconURL: "/assets/img/skills/frameworks/react.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -168,6 +178,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Spring Boot",
+      language: "java",
       iconURL: "/assets/img/skills/frameworks/spring.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -191,6 +202,7 @@ export const languagesAndFrameworks =
     },
     {
       name: "Laravel",
+      language: "php",
       iconURL: "/assets/img/skills/frameworks/laravel.png",
       currentLevel: 0.26,
       goalLevel: 0.4,
@@ -211,6 +223,7 @@ export const languagesAndFrameworks =
     },
     {
       name: ".NET",
+      language: "csharp",
       iconURL: "/assets/img/skills/frameworks/dotnet.png",
       currentLevel: 0.26,
       goalLevel: 0.4,

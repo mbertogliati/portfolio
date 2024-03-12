@@ -85,6 +85,7 @@ export class SkillScrollComponent implements AfterViewInit{
   }
   public toggleLanguageMode(){
     this.isLanguageMode = !this.isLanguageMode;
+    this.selectedSkill = undefined;
   }
   getSkills(): Skill[] {
     return this.isLanguageMode ? languagesAndFrameworks.programmingLanguages : languagesAndFrameworks.frameworks;
