@@ -1,0 +1,10 @@
+<div id="animation-container" [style]="getContainerStyle()">
+  <div id="current-skill-wrapper" #selectedSkillDetail [@detail-slide-in] = "currentContent ? currentContent.toString()  : 'none'">
+    <ng-container *ngComponentOutlet="currentContent?.component || null;
+                                        inputs: currentContent?.inputs">
+    </ng-container>
+  </div>
+</div>
+<ng-container *ngComponentOutlet="previousContent?.component || null;
+                                    inputs: previousContent?.inputs">
+</ng-container>
