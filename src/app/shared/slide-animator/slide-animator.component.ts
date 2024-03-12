@@ -26,6 +26,7 @@ import HeightChangeEmitter from "./heightChangeEmitter";
 export class SlideAnimatorComponent{
   constructor(private changeDetector: ChangeDetectorRef) {}
   private _currentContentHeight : number = 0;
+  private _animationState : number = 0;
   handleCurrentContentHeightChange : (newHeight : number) => void =
             (newHeight : number) => {
                 this._currentContentHeight = newHeight;
@@ -39,6 +40,10 @@ export class SlideAnimatorComponent{
     }
     this.previousContent = this.currentContent;
     this.currentContent = newContent;
+    this._animationState = (this._animationState + 1) % 2; //Alternate back and forth between 0 and 1
+  }
+  getAnimationState() : number {
+    return this._animationState;
   }
   isOpen() : boolean {
     return this.currentContent != undefined;

@@ -8,8 +8,6 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { SecondarySkillContainerComponent } from './secondary-skill-container/secondary-skill-container.component';
 import {SharedModule} from "../../shared/shared.module";
 import {AppModule} from "../../app.module";
-import {SkillDetailAnimatorComponent} from "./skill-detail-animator/skill-detail-animator.component";
-
 
 
 @NgModule({
@@ -18,7 +16,6 @@ import {SkillDetailAnimatorComponent} from "./skill-detail-animator/skill-detail
     SkillScrollComponent,
     SkillDetailComponent,
     SecondarySkillContainerComponent,
-    SkillDetailAnimatorComponent
   ],
   imports: [
     CommonModule,

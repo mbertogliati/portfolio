@@ -17,7 +17,7 @@
 </div>
 
 
-<app-skill-detail-animator class="skill-detail-container" [skill]="selectedSkill"></app-skill-detail-animator>
+<app-slide-animator class="skill-detail-container" [content]="{component: SkillDetailComponent, inputs: {skill: this.selectedSkill}}"/>
 
 
 

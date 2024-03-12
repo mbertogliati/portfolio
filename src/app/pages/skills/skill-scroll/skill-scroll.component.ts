@@ -6,11 +6,9 @@ import {
   ViewEncapsulation,
   ChangeDetectorRef
 } from '@angular/core';
-import {NgbCollapse} from "@ng-bootstrap/ng-bootstrap";
 import {Skill} from "../skill";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {SkillDetailComponent} from "../skill-detail/skill-detail.component";
-import {SkillDetailAnimatorComponent} from "../skill-detail-animator/skill-detail-animator.component";
 import {languagesAndFrameworks} from "./skill-data";
 @Component({
   selector: 'app-skill-scroll',
@@ -98,4 +96,5 @@ export class SkillScrollComponent implements AfterViewInit{
 
   protected readonly transition = transition;
   protected readonly languagesAndFrameworks = languagesAndFrameworks;
+    protected readonly SkillDetailComponent = SkillDetailComponent;
 }

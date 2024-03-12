@@ -5,13 +5,15 @@ import {ProgressBarComponent} from './progress-bar/progress-bar.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {NgOptimizedImage} from "@angular/common";
 import { SwitchComponent } from './switch/switch.component';
+import {SlideAnimatorComponent} from "./slide-animator/slide-animator.component";
 
 
 @NgModule({
   declarations: [
     IconComponent,
     ProgressBarComponent,
-    SwitchComponent
+    SwitchComponent,
+    SlideAnimatorComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { SwitchComponent } from './switch/switch.component';
   exports: [
     IconComponent,
     ProgressBarComponent,
-    SwitchComponent
+    SwitchComponent,
+    SlideAnimatorComponent
   ]
 })
 export class SharedModule { }
