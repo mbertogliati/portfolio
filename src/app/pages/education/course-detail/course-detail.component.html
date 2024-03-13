@@ -1,0 +1,14 @@
+<div #courseDetailMainContainer class="d-flex flex-column gap-4 w-100" [class.hidden] = "!course">
+    <div class="skill-header d-flex align-items-center">
+        <img height="50" width="50" src="{{course?.iconURL}}"/>
+        <h2 class="course-name my-0">{{course?.name}}</h2>
+    </div>
+    <div class="d-flex flex-wrap">
+        Year of completion: {{course?.year}}
+    </div>
+
+    <div class="primary-container">
+        <p [innerHTML]="course?.description">
+        </p>
+    </div>
+</div>

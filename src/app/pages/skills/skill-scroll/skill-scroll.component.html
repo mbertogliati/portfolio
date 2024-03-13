@@ -1,4 +1,6 @@
-<app-switch [label]="{on: 'F', off: 'L'}" (click)="toggleLanguageMode()" [on]="!isLanguageMode" />
+<div class="d-flex justify-content-end">
+    <app-switch [label]="{on: 'F', off: 'L'}" (click)="toggleLanguageMode()" [on]="!isLanguageMode" />
+</div>
 <div class="container d-flex" id="skill-scroll-main-container">
   <a class="scroll-button prev" [class.disabled]="isScrollTopLeft" (click)="scrollLeft()"><img ngSrc="assets/img/dropdown-icon.png" width="512" height="546" alt=""></a>
 
