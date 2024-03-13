@@ -8,7 +8,7 @@ import {
   Type,
   ViewChild
 } from '@angular/core';
-import {animate, style, transition, trigger} from "@angular/animations";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 import HeightChangeEmitter from "./heightChangeEmitter";
 @Component({
   selector: 'app-slide-animator',
@@ -16,6 +16,10 @@ import HeightChangeEmitter from "./heightChangeEmitter";
   styleUrls: ['./slide-animator.component.scss'],
   animations: [
     trigger('detail-slide-in', [
+      transition('* => closed', [
+        style({transform: 'translateY(-120%)', height: '0'}),
+        animate("0.6s ease-in-out")
+      ]),
       transition('* => *', [
         style({transform: 'translateY(-120%)'}),
         animate("0.6s ease-in-out")
@@ -26,7 +30,7 @@ import HeightChangeEmitter from "./heightChangeEmitter";
 export class SlideAnimatorComponent{
   constructor(private changeDetector: ChangeDetectorRef) {}
   private _currentContentHeight : number = 0;
-  private _animationState : number = 0;
+  private _animationState : "closed" | "A" | "B" = "closed";
   handleCurrentContentHeightChange : (newHeight : number) => void =
             (newHeight : number) => {
                 this._currentContentHeight = newHeight;
@@ -37,12 +41,17 @@ export class SlideAnimatorComponent{
   @Input() set content(newContent : {component : Type<any>, inputs: any} | undefined){
     if(newContent){
         newContent.inputs = {...newContent.inputs, heightUpdateCallbacks: [this.handleCurrentContentHeightChange]};
+        if(this._animationState === "A")
+            this._animationState = "B";
+        else
+            this._animationState = "A";
+    }else{
+        this._animationState = "closed";
     }
     this.previousContent = this.currentContent;
     this.currentContent = newContent;
-    this._animationState = (this._animationState + 1) % 2; //Alternate back and forth between 0 and 1
   }
-  getAnimationState() : number {
+  getAnimationState() : string {
     return this._animationState;
   }
   isOpen() : boolean {

@@ -113,6 +113,7 @@
     aspect-ratio: 1;
     max-width: 12rem;
     justify-content: center;
+    cursor: pointer;
 
     *{
       width: fit-content;
@@ -135,4 +136,8 @@
       }
     }
   }
+}
+app-course-detail{
+  width: 100%;
+  min-width: 250px;
 }

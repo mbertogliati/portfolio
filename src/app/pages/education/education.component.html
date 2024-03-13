@@ -1,74 +1,70 @@
 <div class="container-fluid page-container" id="education-page-container">
   <div class="container d-flex flex-column gap-4">
     <h2 class="page-title">Education</h2>
-    <div class="utn-container container mx-lg-5 d-flex flex-column">
-      <div class="utn-header w-100">
-        <div class="career-title d-flex flex-column mb-4">
-          <h3 class="mb-1">Information Systems Engineering</h3>
-          <h5>National Technological University</h5>
-          <span>Buenos Aires Regional College</span>
-          <span><b>March 2021 - Present</b></span>
-        </div>
-      </div>
-
-      <div class="utn-content">
-        <div class="color-reference-container">
-          <div class="color-reference-table">
-            <span class="color-reference success">Approved</span>
-            <span class="color-reference indigo">Available to Course</span>
-            <span class="color-reference info">On going</span>
-            <span class="color-reference dark-gray">Not available to course</span>
-          </div>
-        </div>
-        <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start">
-          <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 1">
-            <div class="subject-container">
-              <div class="subject approved">Systems and Organizations</div>
-              <div class="subject approved">Algorithms and Data Structures</div>
-              <div class="subject approved">Calculus I</div>
-              <div class="subject approved">Computer Architecture</div>
-              <div class="subject approved">Engineering and Society</div>
-              <div class="subject approved">Algebra and Analytic Geometry</div>
-              <div class="subject approved">Chemistry</div>
-              <div class="subject approved">Discrete Mathematics</div>
-            </div>
-          </mat-tab>
-          <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 2">
-
-          </mat-tab>
-          <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 3">
-
-          </mat-tab>
-          <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 4">
-
-          </mat-tab>
-          <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 5">
-
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-    </div>
-    <div class="courses-container container">
-      <h3 class="mb-1">Courses</h3>
-      <div class="courses-row container gap-5 my-5">
-        <div class="row justify-content-center">
-
-          <div class="col-md primary-container course m-2">
-            <h5 class="course-title">Full Stack Dev</h5>
-            <div class="course-icon">
-              <app-icon  [icon]="{name:'Laravel', iconURL:'/assets/img/skills/frameworks/laravel.png'}"></app-icon>
+    <div class="aligned-container">
+        <div class="utn-container container mx-lg-5 d-flex flex-column">
+          <div class="utn-header w-100">
+            <div class="career-title d-flex flex-column mb-4">
+              <h3 class="mb-1">Information Systems Engineering</h3>
+              <h5>National Technological University</h5>
+              <span>Buenos Aires Regional College</span>
+              <span><b>March 2021 - Present</b></span>
             </div>
           </div>
 
-          <div class="col-md primary-container course m-2">
-            <h5 class="course-title">Python</h5>
-            <div class="course-icon">
-              <app-icon  [icon]="{name:'Python', iconURL:'/assets/img/skills/python.png'}"></app-icon>
+          <div class="utn-content">
+            <div class="color-reference-container">
+              <div class="color-reference-table">
+                <span class="color-reference success">Approved</span>
+                <span class="color-reference indigo">Available to Course</span>
+                <span class="color-reference info">On going</span>
+                <span class="color-reference dark-gray">Not available to course</span>
+              </div>
+            </div>
+            <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start">
+              <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 1">
+                <div class="subject-container">
+                  <div class="subject approved">Systems and Organizations</div>
+                  <div class="subject approved">Algorithms and Data Structures</div>
+                  <div class="subject approved">Calculus I</div>
+                  <div class="subject approved">Computer Architecture</div>
+                  <div class="subject approved">Engineering and Society</div>
+                  <div class="subject approved">Algebra and Analytic Geometry</div>
+                  <div class="subject approved">Chemistry</div>
+                  <div class="subject approved">Discrete Mathematics</div>
+                </div>
+              </mat-tab>
+              <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 2">
+
+              </mat-tab>
+              <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 3">
+
+              </mat-tab>
+              <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 4">
+
+              </mat-tab>
+              <mat-tab [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level 5">
+
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+        <div class="courses-container container">
+          <h3 class="mb-1">Courses</h3>
+          <div class="courses-row container gap-5 my-5">
+            <div class="row justify-content-center">
+
+              <div class="col-md primary-container course m-2" *ngFor="let course of courses" (click) = "toggleSelectedCourse(course)">
+                <h5 class="course-title">{{course.name}}</h5>
+                <div class="course-icon">
+                  <app-icon  [icon]="course"></app-icon>
+                </div>
+              </div>
+
             </div>
           </div>
-
         </div>
-      </div>
+      <app-slide-animator [content]="selectedCourse ? {component: CourseDetailComponent, inputs: {course: this.selectedCourse}} : undefined"/>
     </div>
   </div>
 </div>

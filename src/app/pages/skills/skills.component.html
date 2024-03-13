@@ -1,95 +1,97 @@
 <div class="container-fluid page-container" id="skills-page-container">
   <div class="container d-flex flex-column gap-4d-flex flex-column gap-4">
     <h2 class="page-title">Skills</h2>
-    <div id="skill-cards-container" class="container w-auto">
-      <div id="skill-cards" class="row row-cols-1 row-cols-lg-2">
-        <div class="col">
-          <div class="primary-container">
-            <h4 class="skill-title-fast-learning">Fast Learning</h4>
-            <p>
-              I‘ve always had an interest in how the world works and learning what is in it,
-              so eventually I became good at learning. I can learn and put the learned concepts into
-              practice very fast.
-            </p>
+        <div class="aligned-container">
+        <div id="skill-cards-container" class="container w-auto">
+          <div id="skill-cards" class="row row-cols-1 row-cols-lg-2">
+            <div class="col">
+              <div class="primary-container">
+                <h4 class="skill-title-fast-learning">Fast Learning</h4>
+                <p>
+                  I‘ve always had an interest in how the world works and learning what is in it,
+                  so eventually I became good at learning. I can learn and put the learned concepts into
+                  practice very fast.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="primary-container">
+                <h4 class="skill-title-teamworking">Teamworking</h4>
+                <p>
+                  Good teams perform better. In any team that I work in, I always try to make the difference,
+                  contributing with new ideas and being solidary and trustworthy.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="primary-container">
+                <h4 class="skill-title-clean-coding">Clean Coding</h4>
+                <p>
+                  Dirty code impacts directly on project cost. Whenever I code, I always try to apply
+                  Design Patterns and the SOLID Principles to make my code more legible, flexible and mantainable.
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="primary-container">
+                <h4 class="skill-title-problem-solving">Problem Solving</h4>
+                <p>
+                  Divide and conquer is the key to solving any complex problem.
+                  Anytime I’m facing a problem, I split it in smaller parts which are easier to solve,
+                  creating abstraction layers that I can make use of as the complexity starts to increase.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="primary-container">
-            <h4 class="skill-title-teamworking">Teamworking</h4>
-            <p>
-              Good teams perform better. In any team that I work in, I always try to make the difference,
-              contributing with new ideas and being solidary and trustworthy.
-            </p>
+        <h4 id="tech-stack-title">Tech Stack</h4>
+        <div class="container position-relative">
+          <div>
+            <app-skill-scroll></app-skill-scroll>
           </div>
         </div>
-        <div class="col">
-          <div class="primary-container">
-            <h4 class="skill-title-clean-coding">Clean Coding</h4>
-            <p>
-              Dirty code impacts directly on project cost. Whenever I code, I always try to apply
-              Design Patterns and the SOLID Principles to make my code more legible, flexible and mantainable.
-            </p>
+        <div class="container">
+          <div class="row g-3 p-0 px-md-5 mx-md-5">
+
+            <app-secondary-skill-container class="col-lg"
+                                           [title]="'Databases'"
+                                           [icons]="[
+                                            {name: 'MySQL', iconURL:'/assets/img/skills/mysql.png'},
+                                            {name: 'Oracle SQL', iconURL:'/assets/img/skills/oraclesql.png'} ]">
+            </app-secondary-skill-container>
+
+            <app-secondary-skill-container class="col-lg"
+                                           [title]="'System Design'"
+                                           [icons]="[
+                                            {name: 'UML', iconURL:'/assets/img/skills/uml.png'},
+                                            {name: 'Plant UML', iconURL:'/assets/img/skills/puml.png'},
+                                            {name: 'Enterprise Architect', iconURL:'/assets/img/skills/enterprise-architect.png'}]">
+            </app-secondary-skill-container>
+
+            <app-secondary-skill-container class="col-lg"
+                                           [title]="'UI Design'"
+                                           [icons]="[
+                                            {name: 'HTML', iconURL:'/assets/img/skills/html.png'},
+                                            {name: 'CSS', iconURL:'/assets/img/skills/css.png'},
+                                            {name: 'Figma', iconURL:'/assets/img/skills/figma.png'},
+                                            {name: 'Framer', iconURL:'/assets/img/skills/framer.png'}]">
+            </app-secondary-skill-container>
+
           </div>
         </div>
-        <div class="col">
-          <div class="primary-container">
-            <h4 class="skill-title-problem-solving">Problem Solving</h4>
-            <p>
-              Divide and conquer is the key to solving any complex problem.
-              Anytime I’m facing a problem, I split it in smaller parts which are easier to solve,
-              creating abstraction layers that I can make use of as the complexity starts to increase.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h4 id="tech-stack-title">Tech Stack</h4>
-    <div class="container position-relative">
-      <div>
-        <app-skill-scroll></app-skill-scroll>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row g-3 p-0 px-md-5 mx-md-5">
-
-        <app-secondary-skill-container class="col-lg"
-                                       [title]="'Databases'"
-                                       [icons]="[
-                                        {name: 'MySQL', iconURL:'/assets/img/skills/mysql.png'},
-                                        {name: 'Oracle SQL', iconURL:'/assets/img/skills/oraclesql.png'} ]">
-        </app-secondary-skill-container>
-
-        <app-secondary-skill-container class="col-lg"
-                                       [title]="'System Design'"
-                                       [icons]="[
-                                        {name: 'UML', iconURL:'/assets/img/skills/uml.png'},
-                                        {name: 'Plant UML', iconURL:'/assets/img/skills/puml.png'},
-                                        {name: 'Enterprise Architect', iconURL:'/assets/img/skills/enterprise-architect.png'}]">
-        </app-secondary-skill-container>
-
-        <app-secondary-skill-container class="col-lg"
-                                       [title]="'UI Design'"
-                                       [icons]="[
-                                        {name: 'HTML', iconURL:'/assets/img/skills/html.png'},
-                                        {name: 'CSS', iconURL:'/assets/img/skills/css.png'},
-                                        {name: 'Figma', iconURL:'/assets/img/skills/figma.png'},
-                                        {name: 'Framer', iconURL:'/assets/img/skills/framer.png'}]">
-        </app-secondary-skill-container>
-
-      </div>
-    </div>
-    <div id="skill-coming-soon" class="container">
-        <div class="d-flex justify-content-center flex-wrap"
-             matTooltip="Coming Soon"
-             matTooltipShowDelay="{{500}}"
-             matTooltipHideDelay="{{100}}"
-             [matTooltipClass] ="{'icon-tooltip': true}">
-          <app-icon class="icon" [icon]="{name:'Django', iconURL: '/assets/img/skills/coming-soon/django.png'}"></app-icon>
-          <app-icon class="icon" [icon]="{name:'Ruby on Rails', iconURL: '/assets/img/skills/coming-soon/rails.png'}"></app-icon>
-          <app-icon class="icon" [icon]="{name:'Svelte', iconURL: '/assets/img/skills/coming-soon/svelte.png'}"></app-icon>
-          <app-icon class="icon" [icon]="{name:'Vue', iconURL: '/assets/img/skills/coming-soon/vue.png'}"></app-icon>
-          <app-icon class="icon" [icon]="{name:'Docker', iconURL: '/assets/img/skills/coming-soon/docker.png'}"></app-icon>
-          <app-icon class="icon" [icon]="{name:'MongoDB', iconURL: '/assets/img/skills/coming-soon/mongo-db.png'}"></app-icon>
+        <div id="skill-coming-soon" class="container">
+            <div class="d-flex justify-content-center flex-wrap"
+                 matTooltip="Coming Soon"
+                 matTooltipShowDelay="{{500}}"
+                 matTooltipHideDelay="{{100}}"
+                 [matTooltipClass] ="{'icon-tooltip': true}">
+              <app-icon class="icon" [icon]="{name:'Django', iconURL: '/assets/img/skills/coming-soon/django.png'}"></app-icon>
+              <app-icon class="icon" [icon]="{name:'Ruby on Rails', iconURL: '/assets/img/skills/coming-soon/rails.png'}"></app-icon>
+              <app-icon class="icon" [icon]="{name:'Svelte', iconURL: '/assets/img/skills/coming-soon/svelte.png'}"></app-icon>
+              <app-icon class="icon" [icon]="{name:'Vue', iconURL: '/assets/img/skills/coming-soon/vue.png'}"></app-icon>
+              <app-icon class="icon" [icon]="{name:'Docker', iconURL: '/assets/img/skills/coming-soon/docker.png'}"></app-icon>
+              <app-icon class="icon" [icon]="{name:'MongoDB', iconURL: '/assets/img/skills/coming-soon/mongo-db.png'}"></app-icon>
+            </div>
         </div>
       </div>
   </div>
