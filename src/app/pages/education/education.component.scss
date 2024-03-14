@@ -37,10 +37,9 @@
   }
 }
 .color-reference-table{
-  display: grid;
-  grid-template-columns: [first] 8rem [line2] auto [end];
-  grid-template-rows: [first] 1rem [line2] 1rem [end];
-  row-gap: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 .color-reference{
   font-size: 0.8rem;
@@ -91,16 +90,12 @@
   &.approved{
     background-color: $success;
   }
-  &.on-going{
-    background-color: $info;
+  &.ongoing{
+    background-color: desaturate($info, 40%);
   }
-  &.available{
+  &.pending{
     background-color: $indigo;
   }
-  &.not-available{
-    background-color: $custom-gray;
-  }
-
 }
 .courses-row{
   @include media-breakpoint-down(md) {

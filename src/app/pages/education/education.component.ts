@@ -3,6 +3,7 @@ import {SkillDetailComponent} from "../skills/skill-detail/skill-detail.componen
 import {languagesAndFrameworks} from "../skills/skill-scroll/skill-data";
 import {Course, coursesData} from "./courses-data";
 import {CourseDetailComponent} from "./course-detail/course-detail.component";
+import {careerData, Subject} from "./career-data";
 
 @Component({
   selector: 'app-education',
@@ -16,6 +17,7 @@ export class EducationComponent {
     protected readonly languagesAndFrameworks = languagesAndFrameworks;
 
     courses : Course[] = coursesData;
+    careerData = careerData;
     selectedCourse : Course | undefined = undefined;
 
     toggleSelectedCourse(course : Course) : void {
