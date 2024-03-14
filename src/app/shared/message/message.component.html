@@ -1,0 +1,5 @@
+<ngb-alert [@openClose]="isOpen() ? 'open' : 'closed'" class="snackbar-message"
+           [dismissible]="true"
+           (closed)="close()" [type]=" (this.getMessage()?.type === 'error' ? 'danger' : this.getMessage()?.type) || 'info'"
+           [innerHTML]="this.getMessage()?.text || ''">
+</ngb-alert>
