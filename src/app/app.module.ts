@@ -15,6 +15,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from "@angular/material/tabs";
+import {MessageComponent} from "./shared/message/message.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import {MatTabsModule} from "@angular/material/tabs";
     SkillModule,
     SharedModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MessageComponent,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component,} from '@angular/core';
 import * as $ from 'jquery';
+import Message, {globalMessage} from "./shared/message/Message";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,5 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
   title = 'portfolio';
-  
-  
+  protected readonly globalMessage = globalMessage;
 }

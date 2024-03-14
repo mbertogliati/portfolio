@@ -33,13 +33,31 @@ button[type="submit"]{
   font-weight: 500;
   transition: 0.5s;
   opacity: 0.9;
+  min-width: 5.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover{
-    position: relative;
-    transform: translateY(-0.2rem);
-    transition: 0.2s;
     background-color: darken($primary,10%) !important;
     color: white !important;
+    cursor: auto;
     opacity: 1;
+  }
+  &:not(.loading){
+    &:hover{
+      position: relative;
+      transform: translateY(-0.2rem);
+      transition: 0.2s;
+      background-color: darken($primary,10%) !important;
+      color: white !important;
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  .spinner-border{
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 .messi-container{

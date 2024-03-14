@@ -7,24 +7,29 @@
     <div class="row container">
 
       <div class="col">
-        <form>
+        <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
           <div class="mb-3">
-            <label for="name-input" class="form-label d-none">Name</label>
-            <input type="text" class="form-control form-control-lg" id="name-input" placeholder="Name" aria-describedby="name">
+            <label for="name" class="form-label d-none">Name</label>
+            <input formControlName="name" type="text" class="form-control form-control-lg" id="name" placeholder="Name" aria-describedby="name">
           </div>
           <div class="mb-3">
-            <label for="email-input" class="form-label d-none">Email address</label>
-            <input type="email" class="form-control form-control-lg" id="email-input" placeholder="Email" aria-describedby="email">
+            <label for="email" class="form-label d-none">Email address</label>
+            <input formControlName="email" type="email" class="form-control form-control-lg" id="email" placeholder="Email" aria-describedby="email">
           </div>
           <div class="mb-3">
-            <label for="subject-input" class="form-label d-none">Subject</label>
-            <input type="text" class="form-control form-control-lg" id="subject-input" placeholder="Subject" aria-describedby="name">
+            <label for="subject" class="form-label d-none">Subject</label>
+            <input formControlName="subject" type="text" class="form-control form-control-lg" id="subject" placeholder="Subject" aria-describedby="name">
           </div>
           <div class="mb-3">
-            <label for="message-textarea" class="form-label d-none">Example textarea</label>
-            <textarea class="form-control form-control-lg" id="message-textarea" placeholder="Your Message..."></textarea>
+            <label for="message" class="form-label d-none">Example textarea</label>
+            <textarea formControlName="message" class="form-control form-control-lg" id="message" placeholder="Your Message..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary {{loading ? 'loading' : ''}}">
+            <div *ngIf="!loading">Submit</div>
+            <div *ngIf="loading"  class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
         </form>
       </div>
       <div class="col messi-col d-flex justify-content-center">
