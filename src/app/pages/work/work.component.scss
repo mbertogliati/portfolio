@@ -5,11 +5,12 @@
   gap: 1rem;
   max-width: 600px;
 }
-.company-name,.period-header{
+.company-name,.period-header,.position{
   color: $secondary;
 }
 .period-header{
   font-weight: 400;
+  font-size: 0.8rem;
 }
 .period-content{
   font-weight: 300;
