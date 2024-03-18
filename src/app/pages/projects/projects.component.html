@@ -2,24 +2,24 @@
   <div class="container d-flex flex-column gap-4">
     <h2 class="page-title">Projects</h2>
     <div class="aligned-container d-flex flex-column g-4 justify-content-center align-content-center w-100 flex-wrap">
-      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start" class="subjects-table">
+      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start" class="subjects-table" [style]="{width: '100%'}">
         <mat-tab *ngFor="let title of getProjectKeys()" [bodyClass]="'project-body'" [labelClass]="'project-tab'" label="{{title}}">
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div *ngFor="let project of projectsData[title]" class="carousel-item active">
-                  <h3>{{project.name}}</h3>
-                  <p [innerHTML]="project.description"></p>
-                  <span *ngIf="project.repositoryURL">{{project.repositoryURL}}</span>
+          <div ngbAccordion *ngFor="let project of projectsData[title]" class="overflow-hidden">
+            <div ngbAccordionItem [style]="{border:'none'}" class="header-container">
+              <h2 ngbAccordionHeader>
+                <button ngbAccordionButton class="accordion-button shadow-none">{{project.name}}</button>
+              </h2>
+              <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                  <ng-template>
+                    <div>
+                      <p [innerHTML]="project.description"></p>
+                      <span *ngIf="project.repositoryURL">Repository: <a href="{{project.repositoryURL}}" target="_blank">{{project.repositoryURL}}</a></span>
+                    </div>
+                  </ng-template>
+                </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
         </mat-tab>
       </mat-tab-group>

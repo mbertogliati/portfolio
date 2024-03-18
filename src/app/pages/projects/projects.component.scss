@@ -10,9 +10,15 @@ img{
     padding: 0 20%;
   }
 }
-span{
-  text-align: center;
-  opacity: 0.2;
-  font-size: 1.5rem;
+.accordion-button{
+  background-color: $indigo;
+  border-radius: 0.5rem !important;
+  &:not(.collapsed){
+    background-color: lighten($indigo, 15%);
+    color: $white;
+  }
 }
-
+.header-container{
+  background-color: inherit;
+  margin-bottom: 1rem;
+}

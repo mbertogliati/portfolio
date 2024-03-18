@@ -18,11 +18,15 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MessageComponent} from "./shared/message/message.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
+  NgbAccordionBody,
+  NgbAccordionButton, NgbAccordionCollapse,
+  NgbAccordionDirective, NgbAccordionHeader, NgbAccordionItem,
+  NgbCarousel,
   NgbNav,
   NgbNavContent,
   NgbNavItem,
   NgbNavLinkBase,
-  NgbNavOutlet
+  NgbNavOutlet, NgbSlide
 } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
@@ -51,7 +55,15 @@ import {
     NgbNavItem,
     NgbNavLinkBase,
     NgbNavContent,
-    NgbNavOutlet
+    NgbNavOutlet,
+    NgbCarousel,
+    NgbSlide,
+    NgbAccordionDirective,
+    NgbAccordionItem,
+    NgbAccordionHeader,
+    NgbAccordionButton,
+    NgbAccordionCollapse,
+    NgbAccordionBody
   ],
   providers: [],
   bootstrap: [AppComponent]
