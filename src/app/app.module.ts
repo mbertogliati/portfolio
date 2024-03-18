@@ -17,6 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MessageComponent} from "./shared/message/message.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {
+  NgbNav,
+  NgbNavContent,
+  NgbNavItem,
+  NgbNavLinkBase,
+  NgbNavOutlet
+} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -39,7 +46,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatTabsModule,
     MessageComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbNav,
+    NgbNavItem,
+    NgbNavLinkBase,
+    NgbNavContent,
+    NgbNavOutlet
   ],
   providers: [],
   bootstrap: [AppComponent]

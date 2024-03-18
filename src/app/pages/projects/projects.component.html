@@ -2,11 +2,27 @@
   <div class="container d-flex flex-column gap-4">
     <h2 class="page-title">Projects</h2>
     <div class="aligned-container d-flex flex-column g-4 justify-content-center align-content-center w-100 flex-wrap">
-      <div class="img-container mb-4 container-lg">
-        <img src="assets/img/work-in-progress.png" alt="Work in progress">
-      </div>
-
-      <span>Work in Progress</span>
+      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start" class="subjects-table">
+        <mat-tab *ngFor="let title of getProjectKeys()" [bodyClass]="'project-body'" [labelClass]="'project-tab'" label="{{title}}">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div *ngFor="let project of projectsData[title]" class="carousel-item active">
+                  <h3>{{project.name}}</h3>
+                  <p [innerHTML]="project.description"></p>
+                  <span *ngIf="project.repositoryURL">{{project.repositoryURL}}</span>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
 </div>
