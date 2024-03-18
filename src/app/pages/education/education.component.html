@@ -2,6 +2,7 @@
   <div class="container d-flex flex-column gap-4">
     <h2 class="page-title">Education</h2>
     <div class="aligned-container">
+      <h3 class="mb-4">Careers</h3>
         <div class="utn-container container mx-lg-5 d-flex flex-column">
           <div class="utn-header w-100">
             <div class="career-title d-flex flex-column mb-4">
@@ -20,7 +21,7 @@
                 <span class="color-reference indigo">Pending</span>
               </div>
             </div>
-            <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start">
+            <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start" class="subjects-table">
               <mat-tab *ngFor="let level of careerData.subjects" [bodyClass]="'tab-body'" [labelClass]="'utn-tab'" label="Level {{careerData.subjects.indexOf(level) + 1}}">
                 <div class="subject-container">
                   <div *ngFor="let subject of level" class="subject {{subject.status}}">{{subject.name}}</div>
@@ -30,11 +31,11 @@
           </div>
         </div>
         <div class="courses-container container">
-          <h3 class="mb-1">Courses</h3>
-          <div class="courses-row container gap-5 my-5">
+          <h3 class="mb-4">Courses</h3>
+          <div class="courses-row container gap-5">
             <div class="row justify-content-center">
 
-              <div class="col-md primary-container course m-2" *ngFor="let course of courses" (click) = "toggleSelectedCourse(course)">
+              <div class="col-md primary-container course" *ngFor="let course of courses" (click) = "toggleSelectedCourse(course)">
                 <h5 class="course-title">{{course.name}}</h5>
                 <div class="course-icon">
                   <app-icon  [icon]="course"></app-icon>

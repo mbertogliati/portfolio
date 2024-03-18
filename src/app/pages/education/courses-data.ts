@@ -10,13 +10,16 @@ export const coursesData: Course[] = [
         iconURL: "/assets/img/skills/frameworks/laravel.png",
         year: "2022",
         description: `
-        This was my first contact with web development. I learned the basics of HTML, CSS, JavaScript, PHP, and MySQL.
+        This was my first contact with web development.
         <br>
+        I learned the basics of HTML, CSS, JavaScript, PHP, and MySQL.
+        <br><br>
         The final project consisted of forming a team and developing a web application using the Laravel framework about a topic of our choice.
         <br>
         We chose a general purpose forum, where users can create posts, comment on them, and like or dislike comments.
-        <br>
+        <br><br>
         The concepts included in the course were:
+        <br><br>
         <ul>
             <li>Lightweight front-end with Blade template engine
                 <ul>
@@ -39,8 +42,9 @@ export const coursesData: Course[] = [
                     <li>Eloquent ORM</li>
                 </ul>
             </li>
+        </ul>
             <br>
-            You can find the forum repository <a href="https://github.com/mbertogliati/foro">here<a>
+        You can find the forum repository <a href="https://github.com/mbertogliati/foro" target="_blank">here<a>
         `
     },
     {
@@ -48,8 +52,15 @@ export const coursesData: Course[] = [
         iconURL: "/assets/img/skills/python.png",
         year: "2021",
         description: `
-        This course was my first dive into Python. I've learned the basics of the languages and some of its most famous
-        libraries such as NumPy, Pandas, and Matplotlib.
+        This course was my first dive into Python.
+        <br>
+        I've learned the basics of the languages and some of its most famous
+        libraries such as:
+        <ul>
+            <li>NumPy</li>
+            <li>Pandas</li>
+            <li>Matplotlib</li>
+        </ul>
         `
     }
 
