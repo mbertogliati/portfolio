@@ -91,7 +91,7 @@ export const projectsData : ProjectData = {
         <br><br>
         The goal was to develop a plagiarism detector using Natural Language Processing techniques.
         <br>
-        The application was able to compare a practical assignment to a dataset of documents and to determine if the assignment was plagiarized.
+        The application is able to compare a practical assignment to a dataset of documents and to determine if the assignment was plagiarized.
         <br><br>
         Its purpose was to understand various NLP techniques like Bag of Words, Lemmas, TF-IDF, Cosine Similarity, etc.
         <br>
@@ -139,6 +139,29 @@ export const projectsData : ProjectData = {
     ],
     'Personal': [
       {
+        name: "N-Queens Puzzle",
+        year: "2022",
+        description: `
+        This is a project I developed to learn about the N-Queens puzzle.
+        <br>
+        The N-Queens puzzle is the problem of placing N chess queens on an N×N chessboard so that no two queens threaten each other.
+        <br><br>
+        It's a simple game where you can select the size of the board and play around with the queens to solve the puzzle.
+        `,
+        repositoryURL: "https://github.com/mbertogliati/n-queens-puzzle"
+      },
+      {
+        name: "Simple Notes App",
+        year: "2024",
+        description: `
+        This is a simple notes app I developed to learn about the basics of heavy client applications.
+        <br>
+        For the backend, I used Spring Boot, and for the frontend, I used React.
+        <br><br>
+        `,
+        repositoryURL: "https://github.com/mbertogliati/notes-app"
+      },
+      {
         name: "My Personal Webpage",
         year: "2024",
         description: `
@@ -156,5 +179,15 @@ export const projectsData : ProjectData = {
         repositoryURL: "https://github.com/mbertogliati/portfolio"
       }
     ],
-    'Professional': []
+    'Professional': [
+      {
+        name: "Biblic Institute Webpage",
+        year: "2024",
+        description: `
+        This is a webpage I developed for Temperley Biblic Institute, a local educational institution.
+        <br>
+        You can see the webpage here: <a href="https://www.seminariobiblicotemperley.com.ar/" target="_blank">https://www.seminariobiblicotemperley.com.ar/</a>
+        `,
+      }
+    ]
 }

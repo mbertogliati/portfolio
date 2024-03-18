@@ -208,8 +208,8 @@ export class SelfDestructComponent {
         );
       }
       `,
-      description: "<p>My favourite front-end framework currently. It's functional approach to web components is very simple, intuitive and easy to learn.<br>" +
-        "I personally prefer type safety, so I have used TSX instead of JSX for writting my components.<br>"+
+      description: "<p>My current favourite front-end framework. It's functional approach to web components is very simple, intuitive and easy to learn.<br>" +
+        "I love type safety, so I prefer to use TSX instead of JSX for writting my components.<br>"+
         "Some of the things I've learned about the framework:<br></p>"+
         "<ul>" +
         "<li>Components</li>" +
@@ -245,8 +245,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 }
       `,
       description: "<p>One of the most complete back-end frameworks I have ever seen. It encourages a good project structure " +
-        "and separation of concerns while providing a wide variety of tools. However, It has a steep learning curve, and all " +
-        "the boilerplate needed just to get a simple example to run can be annoying.<br>"+
+        "and separation of concerns while providing a wide variety of tools. However, It has a steep learning curve, and the amount of " +
+        "boilerplate needed just to get a simple example to run can be annoying.<br>"+
         "I've learned about:</p><br>" +
         "<ul>" +
         "<li>Controllers</li>" +
